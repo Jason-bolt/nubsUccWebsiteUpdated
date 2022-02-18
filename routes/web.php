@@ -23,3 +23,8 @@ Route::get('/executives', [Controller::class, 'executives'])->name('executives')
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
 Route::get('/donate', [Controller::class, 'donate'])->name('donate');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

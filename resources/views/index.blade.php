@@ -37,6 +37,8 @@
         </div>
     </section>
 
+    <section style="background-color: rgb(11,37,119)" class="container p-1 rounded-bottom"></section>
+
     <!-- Welcome Address -->
     <section class="p-sm-5 my-3 my-sm-0">
         <div class="container">
@@ -171,7 +173,7 @@
             </div>
 
             <!-- Button for more events -->
-            <a href="news-events.html" class="btn btn-nubsBlue px-4 py-2 mt-5">
+            <a href="{{ route('news_events') }}" class="btn btn-nubsBlue px-4 py-2 mt-5">
                 View all events <i class="bi bi-chevron-right"></i>
             </a>
         </div>
@@ -299,7 +301,7 @@
                     <img src="{{ asset('sysImgs/carousel4.jpg') }}" class="d-block w-100" alt="3" />
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/carousel1.jpg" class="d-block w-100" alt="4" />
+                    <img src="{{ asset('sysImgs/carousel1.jpg') }}" class="d-block w-100" alt="4" />
                 </div>
             </div>
             <button
