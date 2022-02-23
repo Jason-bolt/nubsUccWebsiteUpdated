@@ -7,21 +7,23 @@
             <h1 class="mb-4">Gallery</h1>
             <div class="row g-4">
                 <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow p-0">
-                            <button
-                                class="btn p-0"
-                                type="button"
-                                data-bs-target="#gal1"
-                                data-bs-toggle="modal"
-                            >
-                                <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
-                            </button>
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
+                    <div class="card shadow">
+                        <img
+                            src="{{ asset('sysImgs/pic1.jpeg') }}"
+                            alt="sunday"
+                            class="card-img-top"
+                            data-bs-target="#gal1"
+                            data-bs-toggle="modal"
+                        />
+                        <div class="card-body text-center">
+                            <h3 class="card-title mt-2 mb-3">Sunday Service</h3>
+                            <p class="card-text">
+                                <a href="#" class="btn btn-nubsBlue rounded-pill px-4 py-1">
+                                    <small> View more <i class="bi bi-instagram"></i> </small>
+                                </a>
+                            </p>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <!-- Modal -->
@@ -43,6 +45,11 @@
                                     alt="sunday"
                                     class="card-img-top"
                                 />
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-nubsBlue rounded-pill px-4 py-1">
+                                    <small> View more <i class="bi bi-instagram"></i> </small>
+                                </a>
                             </div>
                         </div>
                     </div>

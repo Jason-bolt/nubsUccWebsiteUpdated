@@ -1,97 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-        crossorigin="anonymous"
-    />
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"
-    ></script>
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css"
-        integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN"
-        crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/css.css" />
-</head>
-<body>
-<section class="p-sm-5">
-    <div class="container mt-5">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img
-                    src="../assets/nubs_logo.png"
-                    alt="NUBS LOGO"
-                    class="img-fluid"
-                    width="700"
-                />
+@extends('admin.layout')
+
+@section('admin_content')
+    <div class="col-md-6 m-auto">
+        <div class="card shadow">
+            <div class="card-title fs-3 text-center pt-2">
+                <strong>Reset Password</strong>
             </div>
+            <div class="card-body">
 
-            <div class="col-md-6 m-auto">
-                <div class="card shadow">
-                    <div class="card-title fs-3 text-center pt-2">
-                        <strong>Reset Password</strong>
+                @if ($errors->any())
+                    <div>
+                        <div class="font-medium text-red-600">
+                            Whoops! Something went wrong.
+                        </div>
+
+                        <ul class="mt-3 text-danger list-style">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+                @endif
 
-                        <!-- Password Reset Token -->
-                            <input type="hidden" name="token" value="{{ $request->route('token') }}">
-                            <div class="form-group mt-2">
-                                <label for="email" class="lead">Email</label>
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    name="email"
-                                    value="{{ old('email', $request->email) }}"
-                                    required
-                                    autofocus
-                                />
-                            </div>
-                            <div class="form-group mt-2">
-                                <label for="password" class="lead">Password</label>
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    name="password"
-                                    required
-                                />
-                            </div>
+                <form method="POST" action="{{ route('password.update') }}">
+                @csrf
 
-                            <div class="form-group mt-2">
-                                <label for="password" class="lead">Confirm Password</label>
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    name="password_confirmation"
-                                    required
-                                />
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <button class="btn btn-nubsBlue mt-4">
-                                        Reset Password
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                <!-- Password Reset Token -->
+                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                    <div class="form-group mt-2">
+                        <label for="email" class="lead">Email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            value="{{ old('email', $request->email) }}"
+                            required
+                            autofocus
+                        />
                     </div>
-                </div>
+                    <div class="form-group mt-2">
+                        <label for="password" class="lead">Password</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="password" class="lead">Confirm Password</label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password_confirmation"
+                            required
+                        />
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-nubsBlue mt-4">
+                                Reset Password
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</section>
-</body>
-</html>
+@endsection
