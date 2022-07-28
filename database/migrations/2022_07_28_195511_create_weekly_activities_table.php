@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('weekly_activities', function (Blueprint $table) {
             $table->increments("id");
-            $table->string("image");
+            $table->string("image")->nullable();
             $table->string("service");
             $table->string("day");
             $table->string("time");

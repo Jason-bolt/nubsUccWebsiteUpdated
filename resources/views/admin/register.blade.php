@@ -11,16 +11,12 @@
                 @if ($errors->any())
                     <div>
 
-{{--                        <ul class="mt-3 text-danger list-style">--}}
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-warning alert-dismissible fade show py-1" role="alert">
-{{--                                    <li>{{ $error }}</li>--}}
                                     {{ $error }}
                                     <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
                                 </div>
-
                             @endforeach
-{{--                        </ul>--}}
                     </div>
                 @endif
 
