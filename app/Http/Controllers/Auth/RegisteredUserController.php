@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('admin.register');
+        return view('admin.register')->with(['page' => 'Register']);
     }
 
     /**
