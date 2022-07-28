@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class WeeklyActivity extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'image',
+        'service',
+        'day',
+        'time',
+        'location'
+    ];
 }

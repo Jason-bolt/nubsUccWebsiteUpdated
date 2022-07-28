@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('weekly_activities', function (Blueprint $table) {
-            $table->id();
+            $table->increments("id");
+            $table->string("image");
+            $table->string("service");
+            $table->string("day");
+            $table->string("time");
+            $table->string("location");
             $table->timestamps();
         });
     }
