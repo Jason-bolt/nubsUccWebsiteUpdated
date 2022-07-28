@@ -10,15 +10,17 @@
 
                 @if ($errors->any())
                     <div>
-                        <div class="font-medium text-red-600">
-                            Whoops! Something went wrong.
-                        </div>
 
-                        <ul class="mt-3 text-danger list-style">
+{{--                        <ul class="mt-3 text-danger list-style">--}}
                             @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                                <div class="alert alert-warning alert-dismissible fade show py-1" role="alert">
+{{--                                    <li>{{ $error }}</li>--}}
+                                    {{ $error }}
+                                    <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
+                                </div>
+
                             @endforeach
-                        </ul>
+{{--                        </ul>--}}
                     </div>
                 @endif
 
@@ -70,7 +72,7 @@
                         <input
                             type="password"
                             class="form-control"
-                            name="password_confirm"
+                            name="password_confirmation"
                             required
                         />
                     </div>
