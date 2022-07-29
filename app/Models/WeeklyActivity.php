@@ -14,14 +14,6 @@ class WeeklyActivity extends Model
         'service',
         'day',
         'time',
-        'location'
+        'location_id'
     ];
-
-    /**
-     * Get location for weekly activity
-     */
-    public function activity_location()
-    {
-        return $this->hasOne(Location::class);
-    }
 }

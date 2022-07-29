@@ -71,11 +71,11 @@
                                                 id="location"
                                                 class="form-control"
                                             >
-                                                <option value="assembly hall" {{ $activity->location == "assembly hall" ? "selected" : "" }}>Assembly Hall</option>
-                                                <option value="crt (top)" {{ $activity->location == "crt (top)" ? "selected" : "" }}>CRT (Top)</option>
-                                                <option value="crt (bottom)" {{ $activity->location == "crt (bottom)" ? "selected" : "" }}>CRT (Bottom)</option>
-                                                <option value="new life baptist church" {{ $activity->location == "new life baptist church" ? "selected" : "" }}>New Life Baptist Church</option>
-                                                <option value="casford field" {{ $activity->location == "assembly hall" ? "selected" : "" }}>Casford Field</option>
+                                                <option value="assembly hall">Assembly Hall</option>
+                                                <option value="crt (top)">CRT (Top)</option>
+                                                <option value="crt (bottom)">CRT (Bottom)</option>
+                                                <option value="new life baptist church">New Life Baptist Church</option>
+                                                <option value="casford field">Casford Field</option>
                                             </select>
                                         </div>
 
