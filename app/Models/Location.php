@@ -13,10 +13,10 @@ class Location extends Model
         'location'
     ];
 
-    /*
+    /**
      * Get the activity(ies) that have this location
-     * */
-    public function activities()
+     */
+    public function location_activities()
     {
         return $this->belongsToMany(WeeklyActivity::class);
     }

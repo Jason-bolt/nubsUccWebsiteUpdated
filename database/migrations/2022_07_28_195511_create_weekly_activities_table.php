@@ -19,7 +19,11 @@ return new class extends Migration
             $table->string("service");
             $table->string("day");
             $table->string("time");
-            $table->string("location");
+            $table->index("location_id");
+            $table->foreign("location_id")
+                ->references("id")
+                ->on("locations")
+                ->onDelete("cascade");
             $table->timestamps();
         });
     }

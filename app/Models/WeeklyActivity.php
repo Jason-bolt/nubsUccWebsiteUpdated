@@ -16,4 +16,12 @@ class WeeklyActivity extends Model
         'time',
         'location'
     ];
+
+    /**
+     * Get location for weekly activity
+     */
+    public function activity_location()
+    {
+        return $this->hasOne(Location::class);
+    }
 }
