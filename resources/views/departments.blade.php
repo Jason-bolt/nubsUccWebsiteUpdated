@@ -23,7 +23,7 @@
             <div class="row g-4">
                 <div class="card mx-auto px-0 my-5">
                     <img
-                        src="{{ asset('sysImgs/carousel1.jpg') }}"
+                        src="{{ asset('sysImages/carousel1.jpg') }}"
                         alt="wing"
                         class="card-img-top img-fluid"
                     />
@@ -48,7 +48,7 @@
 
                 <div class="card mx-auto px-0 my-5">
                     <img
-                        src="{{ asset('sysImgs/carousel2.jpg') }}"
+                        src="{{ asset('sysImages/carousel2.jpg') }}"
                         alt="wing"
                         class="card-img-top img-fluid"
                     />
@@ -73,7 +73,7 @@
 
                 <div class="card mx-auto px-0 my-5">
                     <img
-                        src="{{ asset('sysImgs/carousel3.jpg') }}"
+                        src="{{ asset('sysImages/carousel3.jpg') }}"
                         alt="wing"
                         class="card-img-top img-fluid"
                     />
@@ -98,7 +98,7 @@
 
                 <div class="card mx-auto px-0 my-5">
                     <img
-                        src="{{ asset('sysImgs/carousel4.jpg') }}"
+                        src="{{ asset('sysImages/carousel4.jpg') }}"
                         alt="wing"
                         class="card-img-top img-fluid"
                     />
@@ -123,7 +123,7 @@
 
                 <div class="card mx-auto px-0 my-5">
                     <img
-                        src="{{ asset('sysImgs/carousel1.jpg') }}"
+                        src="{{ asset('sysImages/carousel1.jpg') }}"
                         alt="wing"
                         class="card-img-top img-fluid"
                     />

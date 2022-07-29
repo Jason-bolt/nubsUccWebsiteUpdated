@@ -30,7 +30,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <img
-                    src="{{ asset('sysImgs/nubs_logo.png') }}"
+                    src="{{ asset('sysImages/nubs_logo.png') }}"
                     alt="NUBS LOGO"
                     class="img-fluid"
                     width="700"

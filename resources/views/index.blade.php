@@ -7,13 +7,13 @@
         <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('sysImgs/ban1.jpg') }}" class="d-block w-100" alt="1" />
+                    <img src="{{ asset('sysImages/ban1.jpg') }}" class="d-block w-100" alt="1" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('sysImgs/ban2.jpg') }}" class="d-block w-100" alt="1" />
+                    <img src="{{ asset('sysImages/ban2.jpg') }}" class="d-block w-100" alt="1" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('sysImgs/ban3.jpg') }}" class="d-block w-100" alt="1" />
+                    <img src="{{ asset('sysImages/ban3.jpg') }}" class="d-block w-100" alt="1" />
                 </div>
             </div>
             <button
@@ -131,7 +131,7 @@
             <div class="row g-4">
                 <div class="col-sm-6 col-lg-4">
                     <div class="card shadow">
-                        <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                        <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                         <div class="card-body">
                             <div class="card-title my-3 h3">Sunday Service</div>
                             <div class="card-text">
@@ -144,7 +144,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="card shadow">
-                        <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                        <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                         <div class="card-body">
                             <div class="card-title my-3 h3">Prayer Force</div>
                             <div class="card-text">
@@ -157,7 +157,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="card shadow">
-                        <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                        <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                         <div class="card-body">
                             <div class="card-title my-3 h3">Midweek Service</div>
                             <div class="card-text">
@@ -292,16 +292,16 @@
         <div id="events" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('sysImgs/carousel2.jpg') }}" class="d-block w-100" alt="1" />
+                    <img src="{{ asset('sysImages/carousel2.jpg') }}" class="d-block w-100" alt="1" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('sysImgs/carousel3.jpg') }}" class="d-block w-100" alt="2" />
+                    <img src="{{ asset('sysImages/carousel3.jpg') }}" class="d-block w-100" alt="2" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('sysImgs/carousel4.jpg') }}" class="d-block w-100" alt="3" />
+                    <img src="{{ asset('sysImages/carousel4.jpg') }}" class="d-block w-100" alt="3" />
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('sysImgs/carousel1.jpg') }}" class="d-block w-100" alt="4" />
+                    <img src="{{ asset('sysImages/carousel1.jpg') }}" class="d-block w-100" alt="4" />
                 </div>
             </div>
             <button

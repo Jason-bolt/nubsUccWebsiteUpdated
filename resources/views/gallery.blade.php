@@ -9,7 +9,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card shadow">
                         <img
-                            src="{{ asset('sysImgs/pic1.jpeg') }}"
+                            src="{{ asset('sysImages/pic1.jpeg') }}"
                             alt="sunday"
                             class="card-img-top"
                             data-bs-target="#gal1"
@@ -41,7 +41,7 @@
                             </div>
                             <div class="modal-body">
                                 <img
-                                    src="{{ asset('sysImgs/pic1.jpeg') }}"
+                                    src="{{ asset('sysImages/pic1.jpeg') }}"
                                     alt="sunday"
                                     class="card-img-top"
                                 />
@@ -59,7 +59,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -69,7 +69,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -79,7 +79,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -89,7 +89,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -99,7 +99,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -109,7 +109,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -119,7 +119,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>
@@ -129,7 +129,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <a href="#" class="text-dark btn">
                         <div class="card shadow">
-                            <img src="{{ asset('sysImgs/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
+                            <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
                             <div class="card-body">
                                 <div class="card-title my-3 h3">Sunday Service</div>
                             </div>

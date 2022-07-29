@@ -23,7 +23,7 @@
         integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN"
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/css.css" />
+    <link rel="stylesheet" href="{{ asset('css/css.css') }}" />
 </head>
 <body>
 <header class="header">
@@ -31,7 +31,7 @@
         <div class="container">
             <a href="weekly_activities.html" class="navbar-brand">
                 <img
-                    src="../assets/nubs_logo.png"
+                    src="{{ asset('sysImages/nubs_logo.png') }}"
                     alt="NUBS LOGO"
                     width="50"
                     class="d-inline-block align-text-top"

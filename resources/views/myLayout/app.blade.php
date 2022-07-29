@@ -31,7 +31,7 @@
         <div class="container">
             <a href="{{ route('home') }}" class="navbar-brand">
                 <img
-                    src="{{ asset('sysImgs/nubs_logo.png') }}"
+                    src="{{ asset('sysImages/nubs_logo.png') }}"
                     alt="NUBS LOGO"
                     width="50"
                     class="d-inline-block align-text-top"

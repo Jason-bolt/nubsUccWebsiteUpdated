@@ -10,7 +10,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card shadow">
                         <img
-                            src="../assets/pic1.jpeg"
+                            src="{{ asset('sysImages/nubs_logo.png') }}"
                             alt="sunday"
                             class="card-img-top"
                         />
