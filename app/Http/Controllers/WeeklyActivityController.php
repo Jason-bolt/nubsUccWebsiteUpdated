@@ -15,8 +15,10 @@ class WeeklyActivityController extends Controller
     public function activities()
     {
         $page = "Weekly Activities";
+        $activities = WeeklyActivity::all();
         return view('cms.weekly_activities')->with([
-            'page' => $page
+            'page' => $page,
+            'activities' => $activities
         ]);
     }
 
