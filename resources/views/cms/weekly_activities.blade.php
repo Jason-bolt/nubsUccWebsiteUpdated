@@ -1,6 +1,6 @@
 @extends("cms/layout/_header")
 
-@section("cms_contet")
+@section("cms_content")
 
     <!-- Weekly Activities -->
     <section class="p-sm-5 pt-5 mt-3 mt-sm-0 pt-sm-0">

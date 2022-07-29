@@ -16,10 +16,6 @@
 
                 @if ($errors->any())
                     <div>
-                        <div class="font-medium text-red-600">
-                            Whoops! Something went wrong.
-                        </div>
-
                             @foreach ($errors->all() as $error)
                             <div class="alert alert-warning alert-dismissible fade show py-1" role="alert">
                                 {{ $error }}
@@ -51,10 +47,10 @@
                         />
                     </div>
 
-                    <div class="form-group mt-2">
-                        <input type="checkbox" name="remember" />
-                        <small>Remember me</small>
-                    </div>
+{{--                    <div class="form-group mt-2">--}}
+{{--                        <input type="checkbox" name="remember" />--}}
+{{--                        <small>Remember me</small>--}}
+{{--                    </div>--}}
 
                     <div class="row">
                         <div class="col">

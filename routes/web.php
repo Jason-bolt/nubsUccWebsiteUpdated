@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WeeklyActivityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 
@@ -29,7 +30,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-
-Route::get('/cms/weekly_activities', function () {
-    return "Hello";
+Route::middleware('auth')->group(function () {
+    Route::prefix('cms')->group(function () {
+        Route::get('/weekly_activities', [WeeklyActivityController::class, 'activities'])->name('weekly_activities');
+//        Route::resource('/weekly_activities', WeeklyActivityController::class);
+    });
 });

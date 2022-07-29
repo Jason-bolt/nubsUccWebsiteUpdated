@@ -70,7 +70,8 @@
                         <a href="donate.html" class="nav-link"><u>Donate</u></a>
                     </li>
                     <li class="nav-item">
-                        <form action="#">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
                             <button class="btn btn-nubsBlue rounded-pill">Logout</button>
                         </form>
                     </li>
