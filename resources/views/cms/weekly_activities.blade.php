@@ -11,8 +11,8 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="card shadow">
                             <img
-                                src="{{ asset('sysImages/nubs_logo.png') }}"
-                                alt="sunday"
+                                src="{{ $activity->image == null ? asset('sysImages/nubs_logo.png') : $activity->image }}"
+                                alt="{{ $activity->service }}"
                                 class="card-img-top"
                             />
                             <div class="card-body">
@@ -50,12 +50,16 @@
                                     ></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="#" enctype="multipart/form-data">
+                                    <form action="{{ route('update_activity') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        @method("PUT")
+                                        <input type="text" name="id" value="{{ $activity->id }}" disabled hidden>
                                         <div class="form-group">
                                             <label for="Image" class="lead"> Image </label>
 
                                             <input
                                                 type="file"
+                                                name="image"
                                                 accept="image/*"
                                                 class="form-control"
                                             />
@@ -71,11 +75,11 @@
                                                 id="location"
                                                 class="form-control"
                                             >
-                                                <option value="assembly hall">Assembly Hall</option>
-                                                <option value="crt (top)">CRT (Top)</option>
-                                                <option value="crt (bottom)">CRT (Bottom)</option>
-                                                <option value="new life baptist church">New Life Baptist Church</option>
-                                                <option value="casford field">Casford Field</option>
+                                                <option value="1" {{ $activity->location_id == 1 ? 'selected' : '' }}>Assembly Hall</option>
+                                                <option value="2" {{ $activity->location_id == 2 ? 'selected' : '' }}>New Life Baptist Church</option>
+                                                <option value="3" {{ $activity->location_id == 3 ? 'selected' : '' }}>Casford Field</option>
+                                                <option value="4" {{ $activity->location_id == 4 ? 'selected' : '' }}>CRT (Top)</option>
+                                                <option value="5" {{ $activity->location_id == 5 ? 'selected' : '' }}>CRT (Bottom)</option>
                                             </select>
                                         </div>
 
