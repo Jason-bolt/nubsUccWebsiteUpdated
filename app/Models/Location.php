@@ -16,9 +16,9 @@ class Location extends Model
     /**
      * Get the activity(ies) that have this location
      */
-    public function location_activities()
-    {
-        return $this->belongsToMany(WeeklyActivity::class);
-    }
+//    public function location_activities(): \Illuminate\Database\Eloquent\Relations\HasMany
+//    {
+//        return $this->hasMany(WeeklyActivity::class);
+//    }
 
 }

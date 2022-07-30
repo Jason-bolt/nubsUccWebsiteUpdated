@@ -20,7 +20,7 @@
                                 <div class="card-text">
                                     <p class="mb-0 text-capitalize"><strong>Day:</strong> {{ $activity->day }}</p>
                                     <p class="mb-0"><strong>Time:</strong> {{ $activity->time }}</p>
-                                    <p class="mb-0 text-capitalize"><strong>Location:</strong> {{ $activity->location }}</p>
+                                    <p class="mb-0 text-capitalize"><strong>Location:</strong> {{ $activity->activity_location($activity->location_id) }}</p>
                                 </div>
                                 <div class="card-footer pb-0">
                                     <button
