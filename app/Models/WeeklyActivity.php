@@ -17,6 +17,8 @@ class WeeklyActivity extends Model
         'location_id'
     ];
 
+    public $timestamps = false;
+
     public function activity_location($location_id)
     {
 //        dd($this->belongsTo(Location::class));

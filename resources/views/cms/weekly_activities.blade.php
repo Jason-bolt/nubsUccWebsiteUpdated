@@ -2,6 +2,25 @@
 
 @section("cms_content")
 
+
+    @if (session('status'))
+        <div class="alert alert-success text-center alert-dismissible fade show py-1" role="alert">
+            {{ session('status') }}
+            <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div>
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-warning alert-dismissible fade show py-1" role="alert">
+                    {{ $error }}
+                    <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
+                </div>
+            @endforeach
+        </div>
+    @endif
+
     <!-- Weekly Activities -->
     <section class="p-sm-5 pt-5 mt-3 mt-sm-0 pt-sm-0">
         <div class="container text-center">
@@ -11,7 +30,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="card shadow">
                             <img
-                                src="{{ $activity->image == null ? asset('sysImages/nubs_logo.png') : $activity->image }}"
+                                src="{{ $activity->image == null ? asset('sysImages/nubs_logo.png') : '/images/' . $activity->image }}"
                                 alt="{{ $activity->service }}"
                                 class="card-img-top"
                             />
@@ -53,10 +72,10 @@
                                     <form action="{{ route('update_activity') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method("PUT")
-                                        <input type="text" name="id" value="{{ $activity->id }}" disabled hidden>
+                                        <input type="text" name="id" value="{{ $activity->id }}" hidden>
                                         <div class="form-group">
                                             <label for="Image" class="lead"> Image </label>
-
+                                            <p class="text-secondary"><small><strong>If you wish to keep the current image, leave this section as is</strong></small></p>
                                             <input
                                                 type="file"
                                                 name="image"
@@ -65,7 +84,7 @@
                                             />
                                         </div>
                                         <div class="form-group mt-3">
-                                            <label for="start_time" class="lead">Time </label>
+                                            <label for="time" class="lead">Time </label>
                                             <input type="text" value="{{ $activity->time }}" class="form-control" name="time" id="time" placeholder="e.g: 6:30pm to 8:00pm">
                                         </div>
                                         <div class="form-group mt-3">

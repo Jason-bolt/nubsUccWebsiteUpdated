@@ -75,11 +75,55 @@ class WeeklyActivityController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\WeeklyActivity  $weeklyActivity
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, WeeklyActivity $weeklyActivity)
     {
-        dd($request);
+//        Checking if admin id was sent
+        if ($request->id == null)
+        {
+            return redirect('/');
+        }
+        $id = $request->id;
+        $time = $request->time;
+        $location_id = $request->location;
+
+//        Validate form with or without image
+        $rules = [
+            "id" => ['bail', 'required', 'integer'],
+            "image" => ['nullable', 'image'],
+            "time" => ['required', 'string'],
+            "location" => ['required', 'string']
+        ];
+
+//        Validate form
+        $request->validate($rules);
+
+        if($request->file('image')){
+            $file = $request->file('image');
+            $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
+//            Save image under different file name (using the date)
+            $image_filename = date('YmdHi') . $formatted_image_name;
+//            dd($image_filename);
+            $file-> move(public_path('images'), $image_filename);
+
+            WeeklyActivity::where('id', $id)
+                ->update([
+                    'image' => $image_filename,
+                    'time' => $time,
+                    'location_id' => $location_id
+                ]);
+        }else{
+            $image_filename = null;
+            WeeklyActivity::where('id', $id)
+                ->update([
+                    'time' => $time,
+                    'location_id' => $location_id
+                ]);
+        }
+
+        return back()->with("status", "Activity updated successfully!");
+
     }
 
     /**
