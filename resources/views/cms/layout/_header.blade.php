@@ -81,6 +81,24 @@
     </nav>
 </header>
 
+@if (session('status'))
+    <div class="alert alert-success text-center alert-dismissible fade show py-1" role="alert">
+        {{ session('status') }}
+        <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
+    </div>
+@endif
+
+@if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-warning alert-dismissible fade show py-1" role="alert">
+                {{ $error }}
+                <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
+            </div>
+        @endforeach
+    </div>
+@endif
+
 @yield('cms_content')
 
 <!-- Motto -->

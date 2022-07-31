@@ -219,19 +219,26 @@
                         @csrf
                         <div class="form-group mb-3">
                             <label class="lead" for="image">Image</label>
+                            <p class="my-0">
+                                <small class="text-secondary">If anonymous, leave this section as is</small>
+                            </p>
                             <input type="file" name="image" id="image" class="form-control" />
                         </div>
                         <div class="form-group mb-3">
                             <label class="lead" for="name">Name</label>
+                            <p class="my-0">
+                                <small class="text-secondary">If anonymous, leave this section as is</small>
+                            </p>
                             <input type="text" name="name" id="name" class="form-control" />
                         </div>
                         <div class="form-group mb-3">
-                            <label class="lead" for="testimony">Testimony message</label>
+                            <label class="lead" for="testimony">Testimony message <span class="text-danger">*</span></label>
                             <textarea
                                 name="testimony"
                                 id="testimonyMessage"
                                 rows="7"
                                 class="form-control"
+                                required
                             ></textarea>
                         </div>
                         <button class="btn btn-nubsBlue rounded-pill px-4">Save <i class="bi bi-save"></i></button>
