@@ -47,7 +47,7 @@
                                     <button
                                         class="btn btn-nubsBlue rounded-pill px-3 py-1"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#editTestimony<%= testimony.id %> "
+                                        data-bs-target="#editTestimony"
                                     >
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
@@ -63,7 +63,7 @@
                         <!-- Edit Testimony Modal -->
                         <div
                             class="modal fade"
-                            id="editTestimony<%= testimony.id %>"
+                            id="editTestimony"
                             tabindex="-1"
                         >
                             <div class="modal-dialog modal-fullscreen-md-down">
@@ -131,7 +131,7 @@
                                     <button
                                         class="btn btn-nubsBlue rounded-pill px-3 py-1"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#editTestimony<%= testimony.id %> "
+                                        data-bs-target="#editTestimony"
                                     >
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
@@ -152,7 +152,7 @@
                         <!-- Edit Testimony Modal -->
                         <div
                             class="modal fade"
-                            id="editTestimony<%= testimony.id %>"
+                            id="editTestimony"
                             tabindex="-1"
                         >
                             <div class="modal-dialog modal-fullscreen-md-down">
@@ -201,7 +201,7 @@
         </div>
     </section>
 
-    <!-- Edit Testimony Modal -->
+    <!-- Add Testimony Modal -->
     <div class="modal fade" id="addTestimony" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -215,25 +215,26 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" enctype="multipart/form-data" class="text-center">
+                    <form action="{{ route('add_testimony') }}" method="POST" enctype="multipart/form-data" class="text-center">
+                        @csrf
                         <div class="form-group mb-3">
                             <label class="lead" for="image">Image</label>
-                            <input type="file" class="form-control" />
+                            <input type="file" name="image" id="image" class="form-control" />
                         </div>
                         <div class="form-group mb-3">
                             <label class="lead" for="name">Name</label>
-                            <input type="text" class="form-control" />
+                            <input type="text" name="name" id="name" class="form-control" />
                         </div>
                         <div class="form-group mb-3">
                             <label class="lead" for="testimony">Testimony message</label>
                             <textarea
-                                name="testimonyMessage"
+                                name="testimony"
                                 id="testimonyMessage"
                                 rows="7"
                                 class="form-control"
                             ></textarea>
                         </div>
-                        <button class="btn btn-nubsBlue rounded-pill px-4">Save</button>
+                        <button class="btn btn-nubsBlue rounded-pill px-4">Save <i class="bi bi-save"></i></button>
                     </form>
                 </div>
             </div>
