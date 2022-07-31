@@ -10,7 +10,9 @@
             <div class="row">
                 @forelse($events as $event)
                     <div class="mt-5">
-                        <img src="{{ asset('sysImages/carousel1.jpg') }}" alt="1" class="img-fluid" />
+                        <img src="{{ asset('images/events/' . $event->image) }}" alt="1" class="img-fluid" />
+
+                        <p>{{ $event->description }}</p>
 
                         <div class="card-footer">
                             <a href="#" class="btn btn-danger">
@@ -19,21 +21,21 @@
                         </div>
                     </div>
 
-                    <button
-                        type="button"
-                        data-bs-target="#ev1"
-                        data-bs-toggle="modal"
-                        class="btn btn-nubsBlue mt-5"
-                    >
-                        Add Event Flier <i class="bi bi-plus-lg"></i>
-                    </button>
+
                 @empty
                     <p class="display-4 my-5 py-5">No events added yet!</p>
                 @endforelse
 
-
-
             </div>
+
+            <button
+                type="button"
+                data-bs-target="#ev1"
+                data-bs-toggle="modal"
+                class="btn btn-nubsBlue mt-5"
+            >
+                Add Event Flier <i class="bi bi-plus-lg"></i>
+            </button>
         </div>
     </section>
 
@@ -51,10 +53,16 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    <form action="#">
+                    <form action="{{ route('add_event') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
-                            <label for="flier" class="lead"> Flier </label>
-                            <input type="file" accept="image/*" class="form-control" />
+                            <label for="flyer" class="lead my-1"> Flyer </label>
+                            <input type="file" name="image" accept="image/*" class="form-control" />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="description" class="lead my-1"> Description </label>
+                            <textarea name="description" class="form-control" id="description" rows="4"></textarea>
                         </div>
 
                         <button class="btn btn-nubsBlue rounded-pill mt-4">
