@@ -30,7 +30,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="card shadow">
                             <img
-                                src="{{ $activity->image == null ? asset('sysImages/nubs_logo.png') : '/images/' . $activity->image }}"
+                                src="{{ $activity->image == null ? asset('sysImages/nubs_logo.png') : asset('images/weekly_activity/' . $activity->image) }}"
                                 alt="{{ $activity->service }}"
                                 class="card-img-top"
                             />
