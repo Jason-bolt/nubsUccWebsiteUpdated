@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WeeklyActivityController;
+use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 
@@ -34,10 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::prefix('cms')->group(function () {
         Route::get('/weekly_activities', [WeeklyActivityController::class, 'activities'])->name('weekly_activities');
         Route::put('/weekly_activities', [WeeklyActivityController::class, 'update'])->name('update_activity');
-        Route::get('/events-news', function ()
-        {
-            return view('cms.news_events')->with(["page" => "News/Events"]);
-        })->name('news-events');
-//        Route::resource('/weekly_activities', WeeklyActivityController::class);
+        Route::get('/events-news', [EventsController::class, 'events'])->name('news-events');
     });
 });
