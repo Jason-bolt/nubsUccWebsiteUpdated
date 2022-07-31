@@ -17,10 +17,6 @@ class WeeklyActivityController extends Controller
     {
         $page = "Weekly Activities";
         $activities = WeeklyActivity::all();
-//        $locations = Location::all();
-//        dd($locations);
-//        dd(Location::find(3)->location_activities);
-//        dd(WeeklyActivity::find(1)->activity_location);
         return view('cms.weekly_activities')->with([
             'page' => $page,
             'activities' => $activities,

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NUBS UCC</title>
+    <title>{{ $page }}</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -29,7 +29,7 @@
 <header class="header">
     <nav class="navbar navbar-expand-lg bg-light navbar-light shadow">
         <div class="container">
-            <a href="weekly_activities.html" class="navbar-brand">
+            <a href="{{ route('weekly_activities') }}" class="navbar-brand">
                 <img
                     src="{{ asset('sysImages/nubs_logo.png') }}"
                     alt="NUBS LOGO"
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="weekly_activities.html" class="nav-link"
+                        <a href="{{ route('weekly_activities') }}" class="nav-link {{ $page ==  'Weekly Activities' ? 'active' : ''}}"
                         >Weekly Activities</a
                         >
                     </li>
