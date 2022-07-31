@@ -36,5 +36,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/weekly_activities', [WeeklyActivityController::class, 'activities'])->name('weekly_activities');
         Route::put('/weekly_activities', [WeeklyActivityController::class, 'update'])->name('update_activity');
         Route::get('/events-news', [EventsController::class, 'events'])->name('news-events');
+        Route::post('/events-news', [EventsController::class, 'store'])->name('add-event');
     });
 });

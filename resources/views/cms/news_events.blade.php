@@ -53,7 +53,7 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('add_event') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('add-event') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="flyer" class="lead my-1"> Flyer </label>

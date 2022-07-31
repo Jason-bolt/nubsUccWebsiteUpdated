@@ -40,7 +40,13 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image' => ['required', 'image'],
+            'description' => ['required', 'string']
+        ]);
+
+
+//        dd($request);
     }
 
     /**

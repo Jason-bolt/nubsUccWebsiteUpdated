@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\WeeklyActivity;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,8 +15,10 @@ class Controller extends BaseController
     public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "home";
+        $weekly_activities = WeeklyActivity::all();
         return view('index')->with([
-            'page' => $page
+            'page' => $page,
+            'weekly_activities' => $weekly_activities
         ]);
     }
 
