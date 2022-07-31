@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <div class="text-center">
                                 <img
-                                    src="<%= testimony.image %>"
+                                    src="https://randomuser.me/api/portraits/women/11.jpg"
                                     alt="executive"
                                     class="rounded-circle"
                                 />
@@ -110,7 +110,6 @@
             <h2 class="my-5">Testimonies Pending Approval</h2>
 
             <div class="row g-4">
-                <% pendingTestimonies.forEach((testimony, index) => { %>
                 <div class="col-md-4">
                     <div class="card shadow">
                         <div class="card-body">
@@ -190,7 +189,6 @@
                         </div>
                     </div>
                 </div>
-                <% }) %>
             </div>
         </div>
     </section>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\WeeklyActivityController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\TestimonyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 
@@ -37,6 +38,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/weekly_activities', [WeeklyActivityController::class, 'update'])->name('update_activity');
         Route::get('/events-news', [EventsController::class, 'events'])->name('news-events');
         Route::post('/events-news', [EventsController::class, 'store'])->name('add-event');
-        Route::get('/testimonies', [EventsController::class, 'testimonies'])->name('all_testimonies');
+        Route::get('/testimonies', [TestimonyController::class, 'testimonies'])->name('all_testimonies');
     });
 });
