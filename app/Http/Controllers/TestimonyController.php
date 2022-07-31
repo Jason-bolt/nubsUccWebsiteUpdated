@@ -16,9 +16,11 @@ class TestimonyController extends Controller
     {
         $page = "Testimonies";
         $accepted_testimonies = Testimony::where('is_accepted', true)->get();
+        $pending_testimonies = Testimony::where('is_accepted', false)->get();
         return view('cms.testimonies')->with([
             'page' => $page,
-            'accepted_testimonies' => $accepted_testimonies
+            'accepted_testimonies' => $accepted_testimonies,
+            'pending_testimonies' => $pending_testimonies
         ]);
     }
 
