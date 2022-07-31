@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div>
-                    <img src="../assets/carousel2.jpg" alt="1" class="img-fluid" />
+                    <img src="{{ asset('sysImages/carousel1.jpg') }}" alt="1" class="img-fluid" />
 
                     <div class="card-footer">
                         <a href="#" class="btn btn-danger">
