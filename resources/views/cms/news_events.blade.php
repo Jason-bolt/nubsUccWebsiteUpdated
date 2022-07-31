@@ -8,52 +8,32 @@
 
         <div class="container">
             <div class="row">
-                <div class="mt-5">
-                    <img src="{{ asset('sysImages/carousel1.jpg') }}" alt="1" class="img-fluid" />
+                @forelse($events as $event)
+                    <div class="mt-5">
+                        <img src="{{ asset('sysImages/carousel1.jpg') }}" alt="1" class="img-fluid" />
 
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-danger">
-                            Delete <i class="bi bi-trash"></i>
-                        </a>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-danger">
+                                Delete <i class="bi bi-trash"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="mt-5">
-                    <img src="../assets/carousel3.jpg" alt="1" class="img-fluid" />
 
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-danger">
-                            Delete <i class="bi bi-trash"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="mt-5">
-                    <img src="../assets/carousel4.jpg" alt="1" class="img-fluid" />
+                    <button
+                        type="button"
+                        data-bs-target="#ev1"
+                        data-bs-toggle="modal"
+                        class="btn btn-nubsBlue mt-5"
+                    >
+                        Add Event Flier <i class="bi bi-plus-lg"></i>
+                    </button>
+                @empty
+                    <p class="display-4 my-5 py-5">No events added yet!</p>
+                @endforelse
 
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-danger">
-                            Delete <i class="bi bi-trash"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="mt-5">
-                    <img src="../assets/carousel1.jpg" alt="1" class="img-fluid" />
 
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-danger">
-                            Delete <i class="bi bi-trash"></i>
-                        </a>
-                    </div>
-                </div>
+
             </div>
-
-            <button
-                type="button"
-                data-bs-target="#ev1"
-                data-bs-toggle="modal"
-                class="btn btn-nubsBlue mt-5"
-            >
-                Add Event Flier <i class="bi bi-plus-lg"></i>
-            </button>
         </div>
     </section>
 
