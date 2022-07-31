@@ -2,13 +2,13 @@
 
 @section("cms_content")
     <section>
-        <div class="container p-sm-5">
+        <div class="container p-sm-5 mt-3">
             <h1>Up Coming Events</h1>
         </div>
 
         <div class="container">
             <div class="row">
-                <div>
+                <div class="mt-5">
                     <img src="{{ asset('sysImages/carousel1.jpg') }}" alt="1" class="img-fluid" />
 
                     <div class="card-footer">

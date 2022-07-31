@@ -23,9 +23,9 @@
 
     <!-- Weekly Activities -->
     <section class="p-sm-5 pt-5 mt-3 mt-sm-0 pt-sm-0">
-        <div class="container text-center">
-            <h1 class="pt-5 pb-5">Weekly Activities</h1>
-            <div class="row g-4">
+        <div class="container">
+            <h1 class="pt-sm-5 pb-5">Weekly Activities</h1>
+            <div class="row g-4 text-center">
                 @foreach($activities as $activity)
                     <div class="col-sm-6 col-lg-4">
                         <div class="card shadow">
@@ -39,7 +39,7 @@
                                 <div class="card-text">
                                     <p class="mb-0 text-capitalize"><strong>Day:</strong> {{ $activity->day }}</p>
                                     <p class="mb-0"><strong>Time:</strong> {{ $activity->time }}</p>
-                                    <p class="mb-0 text-capitalize"><strong>Location:</strong> {{ $activity->activity_location($activity->location_id) }}</p>
+                                    <p class="mb-2 text-capitalize"><strong>Location:</strong> {{ $activity->activity_location($activity->location_id) }}</p>
                                 </div>
                                 <div class="card-footer pb-0">
                                     <button

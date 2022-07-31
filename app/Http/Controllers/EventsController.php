@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
@@ -13,9 +14,11 @@ class EventsController extends Controller
      */
     public function events()
     {
+        $events = Event::all();
         $page = "News/Events";
         return view('cms.news_events')->with([
-            "page" => $page
+            "page" => $page,
+            "events" => $events
         ]);
     }
 
