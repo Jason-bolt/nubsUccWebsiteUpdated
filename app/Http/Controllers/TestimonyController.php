@@ -15,10 +15,10 @@ class TestimonyController extends Controller
     public function testimonies()
     {
         $page = "Testimonies";
-        $testimonies = Testimony::where('is_accepted', true)->get();
+        $accepted_testimonies = Testimony::where('is_accepted', true)->get();
         return view('cms.testimonies')->with([
             'page' => $page,
-            'testimonies' => $testimonies
+            'accepted_testimonies' => $accepted_testimonies
         ]);
     }
 

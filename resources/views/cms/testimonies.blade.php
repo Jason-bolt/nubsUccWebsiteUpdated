@@ -4,7 +4,7 @@
     <!-- Testimonies -->
     <section class="p-sm-5 pt-5 mt-3 mt-sm-0 pt-sm-0">
         <div class="container text-center">
-            <h1 class="pt-5 pb-5">Testimonies</h1>
+            <h1 class="pt-sm-5 pt-2 pb-5">Testimonies</h1>
 
             <!-- Add testimony button -->
             <section class="p-sm-5">
@@ -30,84 +30,88 @@
 
             <!-- Cards of testimonies -->
             <div class="row g-4 pb-5">
-                <div class="col-md-4">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <div class="text-center">
-                                <img
-                                    src="https://randomuser.me/api/portraits/women/11.jpg"
-                                    alt="executive"
-                                    class="rounded-circle"
-                                />
-                                <h5 class="my-2">Jason</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur aut delectus dolor doloribus eos illo itaque maiores nemo numquam, quia quidem quod rem, repudiandae rerum tempora unde veritatis vero!</p>
-                            </div>
-                            <div class="mt-4">
-                                <button
-                                    class="btn btn-nubsBlue rounded-pill px-3 py-1"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#editTestimony<%= testimony.id %> "
-                                >
-                                    <i class="bi bi-pencil"></i> Edit
-                                </button>
-                                <form action="delete" method="POST" class="d-inline">
-                                    <button class="btn btn-danger rounded-pill py-1">
-                                        <i class="bi bi-trash"></i> Delete
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Edit Testimony Modal -->
-                    <div
-                        class="modal fade"
-                        id="editTestimony<%= testimony.id %>"
-                        tabindex="-1"
-                    >
-                        <div class="modal-dialog modal-fullscreen-md-down">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="my-0">Edit testimony</h5>
-                                    <button
-                                        type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                    ></button>
+                @forelse($accepted_testimonies as $testimony)
+                    <div class="col-md-4">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/women/11.jpg"
+                                        alt="executive"
+                                        class="rounded-circle"
+                                    />
+                                    <h5 class="my-2">Jason</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur aut delectus dolor doloribus eos illo itaque maiores nemo numquam, quia quidem quod rem, repudiandae rerum tempora unde veritatis vero!</p>
                                 </div>
-                                <div class="modal-body">
-                                    <form action="" enctype="multipart/form-data">
-                                        <div class="form-group mb-3">
-                                            <label class="lead" for="image">Image</label>
-                                            <input type="file" class="form-control" />
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label class="lead" for="name">Name</label>
-                                            <input type="text" class="form-control" />
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label class="lead" for="testimony"
-                                            >Testimony message</label
-                                            >
-                                            <textarea
-                                                name="testimonyMessage"
-                                                id="testimonyMessage"
-                                                rows="7"
-                                                class="form-control"
-                                            ></textarea>
-                                        </div>
-                                        <button class="btn btn-nubsBlue">Save changes</button>
+                                <div class="mt-4">
+                                    <button
+                                        class="btn btn-nubsBlue rounded-pill px-3 py-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#editTestimony<%= testimony.id %> "
+                                    >
+                                        <i class="bi bi-pencil"></i> Edit
+                                    </button>
+                                    <form action="delete" method="POST" class="d-inline">
+                                        <button class="btn btn-danger rounded-pill py-1">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
                                     </form>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Edit Testimony Modal -->
+                        <div
+                            class="modal fade"
+                            id="editTestimony<%= testimony.id %>"
+                            tabindex="-1"
+                        >
+                            <div class="modal-dialog modal-fullscreen-md-down">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="my-0">Edit testimony</h5>
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="" enctype="multipart/form-data">
+                                            <div class="form-group mb-3">
+                                                <label class="lead" for="image">Image</label>
+                                                <input type="file" class="form-control" />
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label class="lead" for="name">Name</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label class="lead" for="testimony"
+                                                >Testimony message</label
+                                                >
+                                                <textarea
+                                                    name="testimonyMessage"
+                                                    id="testimonyMessage"
+                                                    rows="7"
+                                                    class="form-control"
+                                                ></textarea>
+                                            </div>
+                                            <button class="btn btn-nubsBlue">Save changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @empty
+                    <p class="display-6 my-5 py-5">No approved testimonies at the moment!</p>
+                @endforelse
             </div>
 
             <!-- Pending testimonies section -->
-            <h2 class="my-5">Testimonies Pending Approval</h2>
+            <h2 class="my-5"><u>Testimonies Pending Approval</u></h2>
 
             <div class="row g-4">
                 <div class="col-md-4">
