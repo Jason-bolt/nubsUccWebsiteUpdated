@@ -55,7 +55,7 @@
                         >
                     </li>
                     <li class="nav-item">
-                        <a href="news-events.html" class="nav-link">News/Events</a>
+                        <a href="{{ route('news-events') }}" class="nav-link">News/Events</a>
                     </li>
                     <li class="nav-item">
                         <a href="testimony.html" class="nav-link">Testimonies</a>
