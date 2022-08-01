@@ -7,20 +7,29 @@
         </div>
 
         <div class="container">
-            <div class="row">
+
+            <button
+                type="button"
+                data-bs-target="#add_event"
+                data-bs-toggle="modal"
+                class="btn btn-nubsBlue mt-5"
+            >
+                Add Event <i class="bi bi-plus-lg"></i>
+            </button>
+
+            <div class="row mt-4">
                 @forelse($events as $event)
                     <div class="mt-5">
-                        <img src="{{ asset('images/events/' . $event->image) }}" alt="1" class="img-fluid" />
+                        <img src="{{ asset('images/events/' . $event->image) }}" alt="1" class="img-fluid rounded" />
 
-                        <p>{{ $event->description }}</p>
+                        <p style="white-space: pre-wrap" class="pt-4">{{ $event->description }}</p>
 
-                        <div class="card-footer">
+                        <div class="card-footer bg-white">
                             <a href="#" class="btn btn-danger">
                                 Delete <i class="bi bi-trash"></i>
                             </a>
                         </div>
                     </div>
-
 
                 @empty
                     <p class="display-4 my-5 py-5">No events added yet!</p>
@@ -28,19 +37,11 @@
 
             </div>
 
-            <button
-                type="button"
-                data-bs-target="#ev1"
-                data-bs-toggle="modal"
-                class="btn btn-nubsBlue mt-5"
-            >
-                Add Event Flier <i class="bi bi-plus-lg"></i>
-            </button>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="ev1" tabindex="-1">
+    <!-- Add event modal -->
+    <div class="modal fade" id="add_event" tabindex="-1">
         <div class="modal-dialog modal-fullscreen-md-down">
             <div class="modal-content">
                 <div class="modal-header">
@@ -66,7 +67,7 @@
                         </div>
 
                         <button class="btn btn-nubsBlue rounded-pill mt-4">
-                            Save Event
+                            Save Event <i class="bi bi-save"></i>
                         </button>
                     </form>
                 </div>

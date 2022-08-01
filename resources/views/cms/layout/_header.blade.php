@@ -91,7 +91,7 @@
 @if ($errors->any())
     <div>
         @foreach ($errors->all() as $error)
-            <div class="alert alert-warning alert-dismissible fade show py-1" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show py-1 text-center" role="alert">
                 {{ $error }}
                 <small><button type="button" class="btn-close p-2" data-bs-dismiss="alert" aria-label="Close"></button></small>
             </div>

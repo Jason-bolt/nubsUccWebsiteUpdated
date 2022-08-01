@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class EventsController extends Controller
 {
@@ -36,7 +37,7 @@ class EventsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -45,8 +46,21 @@ class EventsController extends Controller
             'description' => ['required', 'string']
         ]);
 
+        $file = $request->file('image');
+        $formatted_image_name = str_replace(' ', '_', $file->getClientOriginalName());
+        $image_filename = date('YmdHi') . $formatted_image_name;
 
-//        dd($request);
+        // Always ensure directory exists before running this code.
+        // Image::..->save(location) does not automatically create directory
+        $location = public_path('images/events/' . $image_filename);
+        Image::make($file)->resize(1366,900)->save($location);
+
+        Event::create([
+            'image' => $image_filename,
+            'description' => $request->description
+        ]);
+
+        return back()->with('status', 'Event added successfully!');
     }
 
     /**
