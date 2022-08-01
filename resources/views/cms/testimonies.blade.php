@@ -120,18 +120,18 @@
                             <div class="card-body">
                                 <div class="text-center">
                                     <img
-                                        src="https://randomuser.me/api/portraits/women/11.jpg"
+                                        src="{{ $testimony->image == null ? asset('sysImages/person.png') : asset('images/testimony/' . $testimony->image) }}"
                                         alt="executive"
                                         class="rounded-circle"
                                     />
-                                    <h5 class="my-2">Jane</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aliquid, architecto asperiores aut consequuntur, cupiditate eveniet ex explicabo hic, incidunt maxime molestiae molestias nam nulla repellendus sequi vel veritatis.</p>
+                                    <h5 class="my-2">{{ $testimony->name }}</h5>
+                                    <p>{{ $testimony->testimony }}</p>
                                 </div>
                                 <div class="mt-4">
                                     <button
                                         class="btn btn-nubsBlue rounded-pill px-3 py-1"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#editTestimony"
+                                        data-bs-target="#editTestimony{{ $testimony->id }}"
                                     >
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
@@ -152,7 +152,7 @@
                         <!-- Edit Testimony Modal -->
                         <div
                             class="modal fade"
-                            id="editTestimony"
+                            id="editTestimony{{ $testimony->id }}"
                             tabindex="-1"
                         >
                             <div class="modal-dialog modal-fullscreen-md-down">
@@ -174,7 +174,7 @@
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label class="lead" for="name">Name</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" name="name" id="name" value="{{ $testimony->name }}" class="form-control" />
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label class="lead" for="testimony"
@@ -185,7 +185,7 @@
                                                     id="testimonyMessage"
                                                     rows="7"
                                                     class="form-control"
-                                                ></textarea>
+                                                >{{ $testimony->testimony }}</textarea>
                                             </div>
                                             <button class="btn btn-nubsBlue">Save changes</button>
                                         </form>

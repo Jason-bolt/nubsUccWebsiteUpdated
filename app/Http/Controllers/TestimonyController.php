@@ -58,7 +58,7 @@ class TestimonyController extends Controller
 //            Save image under different file name (using the date)
             $image_filename = date('YmdHi') . $formatted_image_name;
             $location = public_path('images/testimony/' . $image_filename);
-            Image::make($file)->resize(300,300)->save($location);
+            Image::make($file)->resize(200,200)->save($location);
 
         }else{
             // Image was not provided
