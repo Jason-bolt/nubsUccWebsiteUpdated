@@ -51,7 +51,7 @@
                                     >
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
-                                    <form action="/cms/testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
+                                    <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger rounded-pill py-1">
@@ -80,7 +80,7 @@
                                         ></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/cms/testimonies/{{ $testimony->id }}" enctype="multipart/form-data" method="POST">
+                                        <form action="testimonies/{{ $testimony->id }}" enctype="multipart/form-data" method="POST">
                                             @method("PUT")
                                             @csrf
                                             <div class="form-group mb-3">
@@ -159,7 +159,7 @@
                                     ><i class="bi bi-check-lg"></i> Approve</a
                                     >
 
-                                    <form action="/cms/testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
+                                    <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger rounded-pill py-1">

@@ -25,7 +25,7 @@
                         <p style="white-space: pre-wrap" class="pt-4">{{ $event->description }}</p>
 
                         <div class="card-footer bg-white d-flex">
-                            <button class="btn btn-success me-2">
+                            <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#edit_event{{ $event->id }}">
                                 Edit <i class="bi bi-pencil"></i>
                             </button>
                             <form action="">
@@ -34,6 +34,49 @@
                                 </button>
                             </form>
 
+                        </div>
+                    </div>
+
+                    <!-- Edit event modal -->
+                    <div class="modal fade text-center" id="edit_event{{ $event->id }}" tabindex="-1">
+                        <div class="modal-dialog modal-fullscreen-md-down">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Event</h5>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="events-news/{{ $event->id }}" method="POST" enctype="multipart/form-data">
+                                        @method('put')
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="flyer" class="lead my-1"> Flyer </label>
+                                            <p class="my-0">
+                                                <small class="text-secondary">
+                                                    <strong>
+                                                        To keep previous image, leave this section as is
+                                                    </strong>
+                                                </small>
+                                            </p>
+                                            <input type="file" name="image" accept="image/*" class="form-control" />
+                                        </div>
+
+                                        <div class="form-group mt-3">
+                                            <label for="description" class="lead my-1"> Description </label>
+                                            <textarea name="description" class="form-control" id="description" rows="4">{{ $event->description }}</textarea>
+                                        </div>
+
+                                        <button class="btn btn-nubsBlue rounded-pill mt-4">
+                                            Save Event <i class="bi bi-save"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

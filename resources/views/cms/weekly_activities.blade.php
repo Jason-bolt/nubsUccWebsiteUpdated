@@ -50,7 +50,7 @@
                                     ></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/cms/weekly_activities/{{ $activity->id  }}" method="POST" enctype="multipart/form-data">
+                                    <form action="weekly_activities/{{ $activity->id  }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method("PUT")
                                         <div class="form-group">

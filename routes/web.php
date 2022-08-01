@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/weekly_activities/{weeklyActivity}', [WeeklyActivityController::class, 'update']);
         Route::get('/events-news', [EventsController::class, 'events'])->name('news-events');
         Route::post('/events-news', [EventsController::class, 'store'])->name('add-event');
+        Route::post('/events-news/{event}', [EventsController::class, 'update']);
         Route::get('/testimonies', [TestimonyController::class, 'testimonies'])->name('all_testimonies');
         Route::post('/testimonies', [TestimonyController::class, 'store'])->name('add_testimony');
         Route::put('/testimonies/{testimony}', [TestimonyController::class, 'update']);
