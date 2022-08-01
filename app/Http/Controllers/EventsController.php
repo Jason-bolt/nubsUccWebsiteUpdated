@@ -89,8 +89,7 @@ class EventsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-* //     * @param  int  $id
-     * @param  \App\Models\Event  $event
+     * @param Event $event
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Event $event)
@@ -127,11 +126,13 @@ class EventsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Event $event
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Event $event)
     {
-        //
+        $event->delete();
+
+        return back()->with('status', 'Event deleted successfully!');
     }
 }

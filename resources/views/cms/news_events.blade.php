@@ -28,7 +28,9 @@
                             <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#edit_event{{ $event->id }}">
                                 Edit <i class="bi bi-pencil"></i>
                             </button>
-                            <form action="">
+                            <form action="events-news/{{ $event->id }}" method="POST" onsubmit="return confirm('This event will be deleted!')">
+                                @method('delete')
+                                @csrf
                                 <button class="btn btn-danger">
                                     Delete <i class="bi bi-trash"></i>
                                 </button>
