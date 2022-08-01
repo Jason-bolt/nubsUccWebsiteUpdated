@@ -24,10 +24,16 @@
 
                         <p style="white-space: pre-wrap" class="pt-4">{{ $event->description }}</p>
 
-                        <div class="card-footer bg-white">
-                            <a href="#" class="btn btn-danger">
-                                Delete <i class="bi bi-trash"></i>
-                            </a>
+                        <div class="card-footer bg-white d-flex">
+                            <button class="btn btn-success me-2">
+                                Edit <i class="bi bi-pencil"></i>
+                            </button>
+                            <form action="">
+                                <button class="btn btn-danger">
+                                    Delete <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+
                         </div>
                     </div>
 
