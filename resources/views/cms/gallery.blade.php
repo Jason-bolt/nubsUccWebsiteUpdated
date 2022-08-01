@@ -4,11 +4,58 @@
     <section class="pt-5 pb-2">
         <div class="container">
             <h1 class="mb-4">Gallery</h1>
+
+            <div class="my-5">
+                <button class="btn btn-nubsBlue" data-bs-toggle="modal" data-bs-target="#add_thumbnail">
+                    Add thumbnail <i class="bi bi-plus-lg"></i>
+                </button>
+            </div>
+
+            {{-- Add thumbnail modal --}}
+            <div
+                class="modal fade text-center"
+                id="add_thumbnail"
+                tabindex="-1"
+            >
+                <div class="modal-dialog modal-fullscreen-md-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="my-0">Add thumbnail</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" enctype="multipart/form-data" method="POST">
+                                @csrf
+                                <div class="form-group mb-3">
+                                    <label class="lead" for="image">Thumbnail</label>
+                                    <input type="file" name="image" id="image" class="form-control" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="lead" for="album">Album</label>
+                                    <input type="text" name="album" id="album" class="form-control" />
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="lead" for="link">Link</label>
+                                    <input type="text" name="link" id="link" class="form-control" />
+                                </div>
+
+                                <button class="btn btn-nubsBlue">Add album <i class="bi bi-save"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row g-4">
                 <div class="col-sm-6 col-lg-4">
                     <div class="card shadow">
                         <img
-                            src="../assets/pic1.jpeg"
+                            src="{{ asset('sysImages/pic1.jpeg') }}"
                             alt="sunday"
                             class="card-img-top"
                             data-bs-target="#gal1"
@@ -51,14 +98,21 @@
                             <div class="modal-body">
                                 <form action="" enctype="multipart/form-data">
                                     <div class="form-group mb-3">
-                                        <label for="image" class="lead">Priview Image</label>
+                                        <label for="image" class="lead">Thumbnail</label>
+                                        <p class="text-secondary my-0">
+                                            <small>
+                                                <strong>
+                                                    To keep previous image, leave this section as is
+                                                </strong>
+                                            </small>
+                                        </p>
                                         <input
                                             type="file"
                                             class="form-control"
                                             name="priview_image"
                                         />
                                     </div>
-                                    <div class="formg-group mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="link" class="lead">Link</label>
                                         <input type="text" name="link" class="form-control" />
                                     </div>
@@ -74,90 +128,6 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow">
-                            <img
-                                src="../assets/pic1.jpeg"
-                                alt="sunday"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow">
-                            <img
-                                src="../assets/pic1.jpeg"
-                                alt="sunday"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow">
-                            <img
-                                src="../assets/pic1.jpeg"
-                                alt="sunday"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow">
-                            <img
-                                src="../assets/pic1.jpeg"
-                                alt="sunday"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow">
-                            <img
-                                src="../assets/pic1.jpeg"
-                                alt="sunday"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <a href="#" class="text-dark btn">
-                        <div class="card shadow">
-                            <img
-                                src="../assets/pic1.jpeg"
-                                alt="sunday"
-                                class="card-img-top"
-                            />
-                            <div class="card-body">
-                                <div class="card-title my-3 h3">Sunday Service</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
