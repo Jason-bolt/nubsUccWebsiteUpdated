@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimony;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class TestimonyController extends Controller
 {
@@ -38,11 +39,42 @@ class TestimonyController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        dd($request);
+        $request->validate([
+            'image' => ['nullable', 'image', 'max:5120'],
+            'name' => ['nullable', 'string'],
+            'testimony' => ['required', 'string']
+        ]);
+
+        $name = $request->name == null ? 'Anonymous': $request->name;
+
+        if ($request->file('image'))
+        {
+            $file = $request->file('image');
+            $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
+//            Save image under different file name (using the date)
+            $image_filename = date('YmdHi') . $formatted_image_name;
+            $location = public_path('images/testimony/' . $image_filename);
+            Image::make($file)->resize(300,300)->save($location);
+
+        }else{
+            // Image was not provided
+            $image_filename = null;
+        }
+
+//        dd();
+
+        Testimony::create([
+            'image' => $image_filename,
+            'name' => $name,
+            'testimony' => $request->testimony,
+            'is_accepted' => false
+        ]);
+
+        return back()->with('status', 'Testimony added successfully!');
     }
 
     /**

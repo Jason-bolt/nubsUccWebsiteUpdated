@@ -100,7 +100,6 @@ class WeeklyActivityController extends Controller
             $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
 //            Save image under different file name (using the date)
             $image_filename = date('YmdHi') . $formatted_image_name;
-//            dd($image_filename);
             $file-> move(public_path('images/weekly_activity'), $image_filename);
 
             WeeklyActivity::where('id', $id)
