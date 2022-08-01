@@ -36,14 +36,17 @@ Route::middleware('auth')->group(function () {
     Route::prefix('cms')->group(function () {
         Route::get('/weekly_activities', [WeeklyActivityController::class, 'activities'])->name('weekly_activities');
         Route::put('/weekly_activities/{weeklyActivity}', [WeeklyActivityController::class, 'update']);
+
         Route::get('/events-news', [EventsController::class, 'events'])->name('news-events');
         Route::post('/events-news', [EventsController::class, 'store'])->name('add-event');
         Route::put('/events-news/{event}', [EventsController::class, 'update']);
         Route::delete('/events-news/{event}', [EventsController::class, 'destroy']);
+
         Route::get('/testimonies', [TestimonyController::class, 'testimonies'])->name('all_testimonies');
         Route::post('/testimonies', [TestimonyController::class, 'store'])->name('add_testimony');
         Route::put('/testimonies/{testimony}', [TestimonyController::class, 'update']);
         Route::delete('/testimonies/{testimony}', [TestimonyController::class, 'destroy']);
-//        Route::resource('/testimonies', TestimonyController::class);
+
+//        Route::delete('/gallery', [TestimonyController::class, 'destroy']);
     });
 });
