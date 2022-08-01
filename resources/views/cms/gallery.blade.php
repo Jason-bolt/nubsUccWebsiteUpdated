@@ -63,21 +63,25 @@
                         />
                         <div class="card-body text-center">
                             <h3 class="card-title mt-2 mb-3">Sunday Service</h3>
-                            <p class="card-text">
+                            <div class="card-text d-flex">
                                 <button
                                     class="btn btn-nubsBlue rounded-pill px-4 py-1"
                                     data-bs-toggle="modal"
                                     data-bs-target="#editTile"
                                 >
-                                    Edit tile
+                                    Edit <i class="bi bi-pencil"></i>
                                 </button>
                                 <a
                                     href="https://www.instagram.com/accounts/login/?next=/p/Cd4XvJzowOP/"
                                     target="blank"
                                     class="btn btn-secondary rounded-pill px-4 py-1"
-                                >Link <i class="bi bi-instagram"></i
-                                    ></a>
-                            </p>
+                                >
+                                    Link <i class="bi bi-instagram"></i>
+                                </a>
+                                <form action="">
+                                    <button class="btn btn-danger rounded-pill"> <i class="bi bi-trash"></i></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
