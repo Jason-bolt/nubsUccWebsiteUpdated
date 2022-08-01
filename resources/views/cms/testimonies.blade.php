@@ -80,25 +80,34 @@
                                         ></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="" enctype="multipart/form-data">
+                                        <form action="/cms/testimonies/{{ $testimony->id }}" enctype="multipart/form-data" method="POST">
+                                            @method("PUT")
+                                            @csrf
                                             <div class="form-group mb-3">
                                                 <label class="lead" for="image">Image</label>
-                                                <input type="file" class="form-control" />
+                                                <p class="text-secondary my-0">
+                                                    <small>
+                                                        <strong>
+                                                            To keep previous image, leave this section as is
+                                                        </strong>
+                                                    </small>
+                                                </p>
+                                                <input type="file" name="image" id="image" class="form-control" />
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label class="lead" for="name">Name</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" name="name" id="name" value="{{ $testimony->name }}" class="form-control" />
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label class="lead" for="testimony"
                                                 >Testimony message</label
                                                 >
                                                 <textarea
-                                                    name="testimonyMessage"
-                                                    id="testimonyMessage"
+                                                    name="testimony"
+                                                    id="testimony"
                                                     rows="7"
                                                     class="form-control"
-                                                ></textarea>
+                                                >{{ $testimony->testimony }}</textarea>
                                             </div>
                                             <button class="btn btn-nubsBlue">Save changes</button>
                                         </form>

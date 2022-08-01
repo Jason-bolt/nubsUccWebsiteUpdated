@@ -59,6 +59,9 @@ class TestimonyController extends Controller
             $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
 //            Save image under different file name (using the date)
             $image_filename = date('YmdHi') . $formatted_image_name;
+
+            // Always ensure directory exists before running this code.
+            // Image::..->save(location) does not automatically create directory
             $location = public_path('images/testimony/' . $image_filename);
             Image::make($file)->resize(200,200)->save($location);
 
@@ -66,8 +69,6 @@ class TestimonyController extends Controller
             // Image was not provided
             $image_filename = null;
         }
-
-//        dd();
 
         Testimony::create([
             'image' => $image_filename,
@@ -106,11 +107,43 @@ class TestimonyController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Testimony  $testimony
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Testimony $testimony)
     {
-        //
+        $request->validate([
+            'image' => ['nullable', 'image', 'max:5120'],
+            'name' => ['nullable', 'string'],
+            'testimony' => ['required', 'string']
+        ]);
+
+        $name = $request->name == null ? 'Anonymous': $request->name;
+
+        if ($request->file('image'))
+        {
+            $file = $request->file('image');
+            $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
+//            Save image under different file name (using the date)
+            $image_filename = date('YmdHi') . $formatted_image_name;
+
+            // Always ensure directory exists before running this code.
+            // Image::..->save(location) does not automatically create directory
+            $location = public_path('images/testimony/' . $image_filename);
+            Image::make($file)->resize(200,200)->save($location);
+
+        }else{
+            // Image was not provided
+            $image_filename = $testimony->image;
+        }
+
+        Testimony::where('id', $testimony->id)
+                ->update([
+                    'image' => $image_filename,
+                    'name' => $name,
+                    'testimony' => $request->testimony,
+                ]);
+
+        return back()->with('status', 'Testimony updated successfully!');
     }
 
     /**
