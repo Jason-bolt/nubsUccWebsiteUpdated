@@ -89,13 +89,39 @@ class EventsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-//     * @param  int  $id
+* //     * @param  int  $id
      * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Event $event)
     {
-        dd($event);
+        $request->validate([
+            'image' => ['nullabe', 'image'],
+            'description' => ['nullable', 'required', 'string']
+        ]);
+        $id = $event->id;
+
+        if ($request->file('image'))
+        {
+            $file = $request->file('image');
+            $formatted_image_name = str_replace(' ', '_', $file->getClientOriginalName());
+            $image_filename = date('YmdHi') . $formatted_image_name;
+
+            // Always ensure directory exists before running this code.
+            // Image::..->save(location) does not automatically create directory
+            $location = public_path('images/events/' . $image_filename);
+            Image::make($file)->resize(1366,900)->save($location);
+        }else{
+            $image_filename = $event->image;
+        }
+
+        Event::where('id', $event->id)
+                ->update([
+                    'image' => $image_filename,
+                    'description' => $request->description
+                ]);
+
+        return back()->with('status', 'Event updated successfully!');
     }
 
     /**
