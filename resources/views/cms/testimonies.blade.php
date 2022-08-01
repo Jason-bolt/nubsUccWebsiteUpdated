@@ -111,7 +111,15 @@
             </div>
 
             <!-- Pending testimonies section -->
-            <h2 class="my-5" id="pendingApprovals"><u>Testimonies Pending Approval</u></h2>
+            <h2 class="mt-5 mb-1" id="pendingApprovals"><u>Testimonies Pending Approval</u></h2>
+            <p class="text-secondary mb-0 mt-2">
+                <strong>
+                    Testimonies pending approval can be seen only by admins.
+                </strong>
+            </p>
+            <p class="mb-5 text-secondary">
+                All testimonies apart from the admin submitted testimonies will have to be approved by an admin before it will be displayed for the public.
+            </p>
 
             <div class="row g-4">
                 @forelse($pending_testimonies as $testimony)
@@ -140,7 +148,7 @@
                                     ><i class="bi bi-check-lg"></i> Approve</a
                                     >
 
-                                    <form action="/cms/testimonies/{{ $testimony->id }}" method="POST" class="d-inline">
+                                    <form action="/cms/testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger rounded-pill py-1">

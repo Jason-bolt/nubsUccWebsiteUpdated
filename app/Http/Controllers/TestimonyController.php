@@ -119,6 +119,7 @@ class TestimonyController extends Controller
      */
     public function destroy(Testimony $testimony)
     {
-        dd($testimony);
+        $testimony->delete();
+        return back()->with('status', 'Testimony deleted!');
     }
 }
