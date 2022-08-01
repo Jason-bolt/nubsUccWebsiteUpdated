@@ -50,10 +50,9 @@
                                     ></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="{{ route('update_activity') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="/cms/weekly_activities/{{ $activity->id  }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method("PUT")
-                                        <input type="text" name="id" value="{{ $activity->id }}" hidden>
                                         <div class="form-group">
                                             <label for="Image" class="lead"> Image </label>
                                             <p class="text-secondary"><small><strong>If you wish to keep the current image, leave this section as is</strong></small></p>

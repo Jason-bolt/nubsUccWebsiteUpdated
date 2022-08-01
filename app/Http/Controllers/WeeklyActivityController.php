@@ -70,22 +70,21 @@ class WeeklyActivityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\WeeklyActivity  $weeklyActivity
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request)
+    public function update(Request $request, WeeklyActivity $weeklyActivity)
     {
-//        Checking if admin id was sent
-        if ($request->id == null)
+        if ($weeklyActivity->id == null)
         {
             return redirect('/');
         }
-        $id = $request->id;
+        $id = $weeklyActivity->id;
         $time = $request->time;
         $location_id = $request->location;
 
 //        Validate form with or without image
         $rules = [
-            "id" => ['bail', 'required', 'integer'],
             "image" => ['nullable', 'image'],
             "time" => ['required', 'string'],
             "location" => ['required', 'string']
