@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\WeeklyActivityController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\TestimonyController;
@@ -47,6 +48,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/testimonies/{testimony}', [TestimonyController::class, 'update']);
         Route::delete('/testimonies/{testimony}', [TestimonyController::class, 'destroy']);
 
-//        Route::delete('/gallery', [TestimonyController::class, 'destroy']);
+        Route::get('/gallery', [GalleryController::class, 'show_albums'])->name('show_albums');
     });
 });

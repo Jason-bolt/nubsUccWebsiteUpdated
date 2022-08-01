@@ -61,7 +61,7 @@
                         <a href="{{ route('all_testimonies') }}" class="nav-link {{ $page ==  'Testimonies' ? 'active' : ''}}">Testimonies</a>
                     </li>
                     <li class="nav-item">
-                        <a href="gallery.html" class="nav-link">Gallery</a>
+                        <a href="{{ route('show_albums') }}" class="nav-link {{ $page ==  'Gallery' ? 'active' : ''}}">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a href="executives.html" class="nav-link">Executives</a>
