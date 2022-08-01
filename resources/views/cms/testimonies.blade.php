@@ -51,7 +51,7 @@
                                     >
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
-                                    <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
+                                    <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onsubmit="return confirm('This testimony will be deleted!')">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger rounded-pill py-1">
