@@ -36,22 +36,24 @@
                             <div class="card-body">
                                 <div class="text-center">
                                     <img
-                                        src="https://randomuser.me/api/portraits/women/11.jpg"
+                                        src="{{ $testimony->image == null ? asset('sysImages/person.png') : asset('images/testimony/' . $testimony->image) }}"
                                         alt="executive"
                                         class="rounded-circle"
                                     />
-                                    <h5 class="my-2">Jason</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur aut delectus dolor doloribus eos illo itaque maiores nemo numquam, quia quidem quod rem, repudiandae rerum tempora unde veritatis vero!</p>
+                                    <h5 class="my-2">{{ $testimony->name }}</h5>
+                                    <p>{{ $testimony->testimony }}</p>
                                 </div>
                                 <div class="mt-4">
                                     <button
                                         class="btn btn-nubsBlue rounded-pill px-3 py-1"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#editTestimony"
+                                        data-bs-target="#editTestimony{{ $testimony->id }}"
                                     >
                                         <i class="bi bi-pencil"></i> Edit
                                     </button>
-                                    <form action="delete" method="POST" class="d-inline">
+                                    <form action="/cms/testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
+                                        @method('delete')
+                                        @csrf
                                         <button class="btn btn-danger rounded-pill py-1">
                                             <i class="bi bi-trash"></i> Delete
                                         </button>
@@ -63,7 +65,7 @@
                         <!-- Edit Testimony Modal -->
                         <div
                             class="modal fade"
-                            id="editTestimony"
+                            id="editTestimony{{ $testimony->id }}"
                             tabindex="-1"
                         >
                             <div class="modal-dialog modal-fullscreen-md-down">

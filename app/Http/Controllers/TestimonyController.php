@@ -38,6 +38,8 @@ class TestimonyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * Testimonies from the admin console are default as approved.
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
@@ -71,7 +73,7 @@ class TestimonyController extends Controller
             'image' => $image_filename,
             'name' => $name,
             'testimony' => $request->testimony,
-            'is_accepted' => false
+            'is_accepted' => true
         ]);
 
         return back()->with('status', 'Testimony added successfully!');
