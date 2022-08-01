@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/events-news', [EventsController::class, 'store'])->name('add-event');
         Route::get('/testimonies', [TestimonyController::class, 'testimonies'])->name('all_testimonies');
         Route::post('/testimonies', [TestimonyController::class, 'store'])->name('add_testimony');
-        Route::delete('/testimonies', [TestimonyController::class, 'store'])->name('add_testimony');
+        Route::delete('/testimonies/{testimony}', [TestimonyController::class, 'destroy']);
 //        Route::resource('/testimonies', TestimonyController::class);
     });
 });

@@ -140,9 +140,9 @@
                                     ><i class="bi bi-check-lg"></i> Approve</a
                                     >
 
-                                    <form action="{{ route('delete_testimony') }}" method="POST" class="d-inline">
-                                        @csrf
+                                    <form action="/cms/testimonies/{{ $testimony->id }}" method="POST" class="d-inline">
                                         @method('delete')
+                                        @csrf
                                         <button class="btn btn-danger rounded-pill py-1">
                                             <i class="bi bi-trash"></i> Delete
                                         </button>

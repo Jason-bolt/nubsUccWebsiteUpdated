@@ -119,6 +119,6 @@ class TestimonyController extends Controller
      */
     public function destroy(Testimony $testimony)
     {
-        //
+        dd($testimony);
     }
 }
