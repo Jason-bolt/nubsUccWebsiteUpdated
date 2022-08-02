@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/gallery', [GalleryController::class, 'show_albums'])->name('show_albums');
         Route::post('/gallery', [GalleryController::class, 'store'])->name('add_album');
+        Route::put('/gallery/{gallery}', [GalleryController::class, 'update']);
         Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy']);
     });
 });

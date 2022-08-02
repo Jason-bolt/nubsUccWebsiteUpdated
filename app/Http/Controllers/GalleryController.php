@@ -94,11 +94,41 @@ class GalleryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Gallery  $gallery
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Gallery $gallery)
     {
-        //
+        $request->validate([
+            'image' => ['nullable', 'image', 'max:5120'],
+            'album' => ['required', 'string'],
+            'link' => ['required', 'string']
+        ]);
+
+        if ($request->file('image'))
+        {
+            $file = $request->file('image');
+            $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
+//            Save image under different file name (using the date)
+            $image_filename = date('YmdHi') . $formatted_image_name;
+
+            // Always ensure directory exists before running this code.
+            // Image::..->save(location) does not automatically create directory
+            $location = public_path('images/gallery/' . $image_filename);
+            Image::make($file)->resize(720,500)->save($location);
+
+        }else{
+            // Image was not provided
+            $image_filename = $gallery->thumbnail;
+        }
+
+        Gallery::where('id', $gallery->id)
+            ->update([
+                'thumbnail' => $image_filename,
+                'album' => $request->album,
+                'link' => $request->link,
+            ]);
+
+        return back()->with('status', 'Album updated successfully!');
     }
 
     /**

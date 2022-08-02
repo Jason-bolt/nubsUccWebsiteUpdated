@@ -89,7 +89,7 @@
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="editTile{{ $album->id }}" tabindex="-1">
+                    <div class="modal fade text-center" id="editTile{{ $album->id }}" tabindex="-1">
                         <div class="modal-dialog modal-fullscreen-md-down">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -102,7 +102,9 @@
                                     ></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="" enctype="multipart/form-data">
+                                    <form action="gallery/{{ $album->id }}" method="POST" enctype="multipart/form-data">
+                                        @method('put')
+                                        @csrf
                                         <div class="form-group mb-3">
                                             <label for="image" class="lead">Thumbnail</label>
                                             <p class="text-secondary my-0">
@@ -116,17 +118,18 @@
                                                 type="file"
                                                 class="form-control"
                                                 name="image"
+                                                id="image"
                                             />
                                         </div>
 
                                         <div class="form-group mb-3">
-                                            <label for="album" class="lead">Link</label>
-                                            <input type="text" name="album" id="album" class="form-control" />
+                                            <label for="album" class="lead">Album</label>
+                                            <input type="text" name="album" id="album" value="{{ $album->album }}" class="form-control" />
                                         </div>
 
                                         <div class="form-group mb-3">
                                             <label for="link" class="lead">Link</label>
-                                            <input type="text" name="link" id="link" class="form-control" />
+                                            <input type="text" name="link" id="link" class="form-control" value="{{ $album->link }}" />
                                         </div>
                                         <button
                                             type="submit"
