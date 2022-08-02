@@ -150,7 +150,7 @@ class TestimonyController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Testimony  $testimony
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Testimony $testimony)
     {

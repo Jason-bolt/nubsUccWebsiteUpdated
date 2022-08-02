@@ -105,10 +105,11 @@ class GalleryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Gallery  $gallery
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        $gallery->delete();
+        return back()->with('status', 'Album deleted!');
     }
 }

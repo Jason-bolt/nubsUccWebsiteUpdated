@@ -78,7 +78,9 @@
                                     >
                                         Link <i class="bi bi-instagram"></i>
                                     </a>
-                                    <form action="">
+                                    <form action="gallery/{{ $album->id }}" method="POST" onsubmit="return confirm('This album will be deleted!')">
+                                        @method('delete')
+                                        @csrf
                                         <button class="btn btn-danger rounded-pill"> Delete <i class="bi bi-trash"></i></button>
                                     </form>
                                 </div>
