@@ -29,19 +29,19 @@
                             ></button>
                         </div>
                         <div class="modal-body">
-                            <form action="" enctype="multipart/form-data" method="POST">
+                            <form action="{{ route('add_album') }}" enctype="multipart/form-data" method="POST">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <label class="lead" for="image">Thumbnail</label>
-                                    <input type="file" name="image" id="image" class="form-control" />
+                                    <input type="file" name="image" id="image" class="form-control" required />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="lead" for="album">Album</label>
-                                    <input type="text" name="album" id="album" class="form-control" />
+                                    <input type="text" name="album" id="album" class="form-control" placeholder="Album name" required />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="lead" for="link">Link</label>
-                                    <input type="text" name="link" id="link" class="form-control" />
+                                    <input type="text" name="link" id="link" class="form-control" placeholder="Instagram URL" required />
                                 </div>
 
                                 <button class="btn btn-nubsBlue">Add album <i class="bi bi-save"></i></button>
@@ -52,85 +52,90 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow">
-                        <img
-                            src="{{ asset('sysImages/pic1.jpeg') }}"
-                            alt="sunday"
-                            class="card-img-top"
-                            data-bs-target="#gal1"
-                            data-bs-toggle="modal"
-                        />
-                        <div class="card-body text-center">
-                            <h3 class="card-title mt-2 mb-3">Sunday Service</h3>
-                            <div class="card-text d-flex">
-                                <button
-                                    class="btn btn-nubsBlue rounded-pill px-4 py-1"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#editTile"
-                                >
-                                    Edit <i class="bi bi-pencil"></i>
-                                </button>
-                                <a
-                                    href="https://www.instagram.com/accounts/login/?next=/p/Cd4XvJzowOP/"
-                                    target="blank"
-                                    class="btn btn-secondary rounded-pill px-4 py-1"
-                                >
-                                    Link <i class="bi bi-instagram"></i>
-                                </a>
-                                <form action="">
-                                    <button class="btn btn-danger rounded-pill"> <i class="bi bi-trash"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="editTile" tabindex="-1">
-                    <div class="modal-dialog modal-fullscreen-md-down">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Edit tile</h5>
-                                <button
-                                    type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                ></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="" enctype="multipart/form-data">
-                                    <div class="form-group mb-3">
-                                        <label for="image" class="lead">Thumbnail</label>
-                                        <p class="text-secondary my-0">
-                                            <small>
-                                                <strong>
-                                                    To keep previous image, leave this section as is
-                                                </strong>
-                                            </small>
-                                        </p>
-                                        <input
-                                            type="file"
-                                            class="form-control"
-                                            name="priview_image"
-                                        />
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="link" class="lead">Link</label>
-                                        <input type="text" name="link" class="form-control" />
-                                    </div>
+                @forelse($albums as $album)
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card shadow">
+                            <img
+                                src="{{ asset('sysImages/pic1.jpeg') }}"
+                                alt="sunday"
+                                class="card-img-top"
+                                data-bs-target="#gal1"
+                                data-bs-toggle="modal"
+                            />
+                            <div class="card-body text-center">
+                                <h3 class="card-title mt-2 mb-3">Sunday Service</h3>
+                                <div class="card-text d-flex justify-content-evenly">
                                     <button
-                                        type="submit"
-                                        class="btn btn-nubsBlue rounded-pill px-3"
+                                        class="btn btn-nubsBlue rounded-pill px-4 py-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#editTile"
                                     >
-                                        Save
+                                        Edit <i class="bi bi-pencil"></i>
                                     </button>
-                                </form>
+                                    <a
+                                        href="https://www.instagram.com/accounts/login/?next=/p/Cd4XvJzowOP/"
+                                        target="blank"
+                                        class="btn btn-secondary rounded-pill px-4 py-1"
+                                    >
+                                        Link <i class="bi bi-instagram"></i>
+                                    </a>
+                                    <form action="">
+                                        <button class="btn btn-danger rounded-pill"> Delete <i class="bi bi-trash"></i></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="editTile" tabindex="-1">
+                        <div class="modal-dialog modal-fullscreen-md-down">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit tile</h5>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" enctype="multipart/form-data">
+                                        <div class="form-group mb-3">
+                                            <label for="image" class="lead">Thumbnail</label>
+                                            <p class="text-secondary my-0">
+                                                <small>
+                                                    <strong>
+                                                        To keep previous image, leave this section as is
+                                                    </strong>
+                                                </small>
+                                            </p>
+                                            <input
+                                                type="file"
+                                                class="form-control"
+                                                name="priview_image"
+                                            />
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="link" class="lead">Link</label>
+                                            <input type="text" name="link" class="form-control" />
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            class="btn btn-nubsBlue rounded-pill px-3"
+                                        >
+                                            Save
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-center display-5 my-5 py-5">No albums added!</p>
+                @endforelse
 
             </div>
         </div>
