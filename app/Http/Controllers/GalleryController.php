@@ -56,7 +56,7 @@ class GalleryController extends Controller
         // Always ensure directory exists before running this code.
         // Image::..->save(location) does not automatically create directory
         $location = public_path('images/gallery/' . $image_filename);
-        Image::make($file)->resize(200,200)->save($location);
+        Image::make($file)->resize(720,500)->save($location);
 
         Gallery::create([
             'thumbnail' => $image_filename,

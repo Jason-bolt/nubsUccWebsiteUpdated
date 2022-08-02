@@ -57,24 +57,22 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="card shadow">
                             <img
-                                src="{{ asset('sysImages/pic1.jpeg') }}"
+                                src="{{ asset('images/gallery/' . $album->thumbnail) }}"
                                 alt="sunday"
                                 class="card-img-top"
-                                data-bs-target="#gal1"
-                                data-bs-toggle="modal"
                             />
                             <div class="card-body text-center">
-                                <h3 class="card-title mt-2 mb-3">Sunday Service</h3>
+                                <h3 class="card-title mt-2 mb-3">{{ $album->album }}</h3>
                                 <div class="card-text d-flex justify-content-evenly">
                                     <button
                                         class="btn btn-nubsBlue rounded-pill px-4 py-1"
                                         data-bs-toggle="modal"
-                                        data-bs-target="#editTile"
+                                        data-bs-target="#editTile{{ $album->id }}"
                                     >
                                         Edit <i class="bi bi-pencil"></i>
                                     </button>
                                     <a
-                                        href="https://www.instagram.com/accounts/login/?next=/p/Cd4XvJzowOP/"
+                                        href="{{ $album->link }}"
                                         target="blank"
                                         class="btn btn-secondary rounded-pill px-4 py-1"
                                     >
@@ -89,7 +87,7 @@
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="editTile" tabindex="-1">
+                    <div class="modal fade" id="editTile{{ $album->id }}" tabindex="-1">
                         <div class="modal-dialog modal-fullscreen-md-down">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -115,12 +113,18 @@
                                             <input
                                                 type="file"
                                                 class="form-control"
-                                                name="priview_image"
+                                                name="image"
                                             />
                                         </div>
+
+                                        <div class="form-group mb-3">
+                                            <label for="album" class="lead">Link</label>
+                                            <input type="text" name="album" id="album" class="form-control" />
+                                        </div>
+
                                         <div class="form-group mb-3">
                                             <label for="link" class="lead">Link</label>
-                                            <input type="text" name="link" class="form-control" />
+                                            <input type="text" name="link" id="link" class="form-control" />
                                         </div>
                                         <button
                                             type="submit"
