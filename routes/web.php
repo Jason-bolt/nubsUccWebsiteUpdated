@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExecutiveController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\WeeklyActivityController;
 use App\Http\Controllers\EventsController;
@@ -52,5 +53,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/gallery', [GalleryController::class, 'store'])->name('add_album');
         Route::put('/gallery/{gallery}', [GalleryController::class, 'update']);
         Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy']);
+
+        Route::get('/executives', [ExecutiveController::class, 'get_executives'])->name('get_executives');
+//        Route::post('/gallery', [GalleryController::class, 'store'])->name('add_album');
+//        Route::put('/gallery/{gallery}', [GalleryController::class, 'update']);
+//        Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy']);
     });
 });
