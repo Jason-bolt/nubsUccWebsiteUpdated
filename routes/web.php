@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/executives/{id}', [ExecutiveController::class, 'get_executives_of_a_batch']);
         Route::post('/executives/add-year-group', [ExecutiveController::class, 'add_year_group'])->name('add_year_group');
         Route::post('/executives', [ExecutiveController::class, 'store'])->name('add_executive');
-//        Route::put('/gallery/{gallery}', [GalleryController::class, 'update']);
+        Route::put('/executives/{executive}', [ExecutiveController::class, 'update']);
         Route::delete('/executives/{executive}', [ExecutiveController::class, 'destroy']);
     });
 });

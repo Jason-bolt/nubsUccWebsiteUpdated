@@ -180,7 +180,9 @@
                                     ></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="" enctype="multipart/form-data">
+                                    <form action="/cms/executives/{{ $executive->id }}" enctype="multipart/form-data" method="POST">
+                                        @method('put')
+                                        @csrf
                                         <div class="form-group mb-3">
                                             <label class="lead" for="execImage"
                                             >Executive image</label>
@@ -188,7 +190,8 @@
                                             <input
                                                 type="file"
                                                 class="form-control"
-                                                name="execImage"
+                                                name="image"
+                                                id="image"
                                             />
                                         </div>
 
@@ -222,7 +225,7 @@
                                             <label class="lead" for="year_group"
                                             >Year group</label
                                             >
-                                            <select name="year_group" id="year_group" class="form-control" required>
+                                            <select name="year_group" id="year_group" name="year_group" class="form-control" required>
                                                 @forelse($year_groups as $year_group)
                                                     <option value="{{ $year_group->id }}" {!! $executive->year_group_id == $year_group->id ? 'selected' : '' !!}>{{ $year_group->year_group }}</option>
                                                 @empty
