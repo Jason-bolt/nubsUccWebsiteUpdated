@@ -112,7 +112,7 @@
             </form>
 
 
-            <!-- Result of search -->
+            <!-- Batch of Executives -->
             <h2 class="my-5" id="#1920">2019/20 Batch of Executives</h2>
             <div class="row text-center g-4">
                 <div class="col-md-6 col-lg-3">
