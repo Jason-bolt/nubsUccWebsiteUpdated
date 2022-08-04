@@ -44,8 +44,7 @@
         <div class="container">
             <p class="display-3">Welcome To NUBS UCC</p>
             <p>
-                The National Union of Baptist Students (NUBS) is a Christian students’ organization comprising of Local Baptist Student Unions. The NUBS is a recognized auxiliary of the Ghana Baptist Convention (GBC)
-                The motto of NUBS is “Presenting everyman perfect in Christ” as captured in Colossians 1:28 in the HOLY BIBLE. The slogan of NUBS is “Empowered!! For Action!!!”
+                The National Union of Baptist Students (NUBS) is a Christian students’ organization comprising of Local Baptist Student Unions. The NUBS is a recognized auxiliary of the Ghana Baptist Convention (GBC). The motto of NUBS is “Presenting everyman perfect in Christ” as captured in Colossians 1:28b in the HOLY BIBLE. The slogan of NUBS is “Empowered!! For Action!!!”
 
             </p>
             <a href="{{ route('about') }}" class="btn btn-nubsBlue px-4 py-2">Learn More</a>
@@ -135,7 +134,7 @@
                                 <div class="card-title my-3 h3 text-capitalize">{{ $weekly_activity->service }}</div>
                                 <div class="card-text">
                                     <p class="mb-0 text-capitalize"><strong>Day:</strong> {{ $weekly_activity->day }}</p>
-                                    <p class="mb-0"><strong>Time:</strong> 8:00am to 11:30pm</p>
+                                    <p class="mb-0"><strong>Time:</strong> {{ $weekly_activity->time }}</p>
                                     <p class="mb-0 text-capitalize"><strong>Location:</strong> {{ $weekly_activity->activity_location($weekly_activity->location_id) }}</p>
                                 </div>
                             </div>
@@ -165,66 +164,26 @@
                         data-bs-ride="carousel"
                     >
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="text-center">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/men/11.jpg"
-                                        alt="executive"
-                                        class="rounded-circle"
-                                    />
-                                    <h5 class="my-2">Name of person</h5>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                        Quae natus quisquam saepe explicabo. Id iste, minus quos
-                                        autem quasi est!
-                                    </p>
+
+                            @forelse($testimonies as $index => $testimony)
+                                <div class="carousel-item {!! $index == 0 ? 'active' : '' !!}">
+                                    <div class="text-center shadow">
+                                        <img
+{{--                                            src="https://randomuser.me/api/portraits/men/11.jpg"--}}
+                                            src="{{ asset('images/testimony/' . $testimony->image) }}"
+                                            alt="executive"
+                                            class="rounded-circle img-fluid"
+                                        />
+                                        <h5 class="my-2">{{ $testimony->name }}</h5>
+                                        <p style="white-space: pre-wrap" class="pb-3">{{ $testimony->testimony }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="text-center">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/women/11.jpg"
-                                        alt="executive"
-                                        class="rounded-circle"
-                                    />
-                                    <h5 class="my-2">Name of person</h5>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                        Quae natus quisquam saepe explicabo. Id iste, minus quos
-                                        autem quasi est!
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="text-center">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/women/21.jpg"
-                                        alt="executive"
-                                        class="rounded-circle"
-                                    />
-                                    <h5 class="my-2">Name of person</h5>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                        Quae natus quisquam saepe explicabo. Id iste, minus quos
-                                        autem quasi est!
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="text-center">
-                                    <img
-                                        src="https://randomuser.me/api/portraits/men/14.jpg"
-                                        alt="executive"
-                                        class="rounded-circle"
-                                    />
-                                    <h5 class="my-2">Name of person</h5>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                        Quae natus quisquam saepe explicabo. Id iste, minus quos
-                                        autem quasi est!
-                                    </p>
-                                </div>
-                            </div>
+                            @empty
+                                <p class="lead py-5 my-5">
+                                    No testimony in the system at the moment...
+                                </p>
+                            @endforelse
+
                             <button
                                 class="carousel-control-prev"
                                 type="button"
@@ -264,18 +223,19 @@
 
         <div id="events" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('sysImages/carousel2.jpg') }}" class="d-block w-100" alt="1" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('sysImages/carousel3.jpg') }}" class="d-block w-100" alt="2" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('sysImages/carousel4.jpg') }}" class="d-block w-100" alt="3" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('sysImages/carousel1.jpg') }}" class="d-block w-100" alt="4" />
-                </div>
+                @forelse($events as $index => $event)
+                    <div class="carousel-item active">
+                        <img src="{{ asset('images/events/' . $event->image) }}" class="d-block w-100" alt="1" />
+                        <div class="container mb-4 py-3">
+                            {{ $event->description }}
+                        </div>
+                    </div>
+                @empty
+                    <p class="lead py-5 my-5 text-center">
+                        No event in the system at the moment...
+                    </p>
+                @endforelse
+
             </div>
             <button
                 class="carousel-control-prev"

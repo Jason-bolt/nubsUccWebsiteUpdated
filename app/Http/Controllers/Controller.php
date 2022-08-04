@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Testimony;
 use App\Models\WeeklyActivity;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -16,9 +18,14 @@ class Controller extends BaseController
     {
         $page = "Home";
         $weekly_activities = WeeklyActivity::all();
+        $testimonies = Testimony::all();
+        $events = Event::all();
+//        dd($testimonies);
         return view('index')->with([
             'page' => $page,
-            'weekly_activities' => $weekly_activities
+            'weekly_activities' => $weekly_activities,
+            'testimonies' => $testimonies,
+            'events' => $events
         ]);
     }
 
