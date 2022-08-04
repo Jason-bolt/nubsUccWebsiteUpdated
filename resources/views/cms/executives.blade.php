@@ -151,7 +151,7 @@
                                 <button
                                     class="btn btn-nubsBlue rounded-pill py-1 px-3"
                                     data-bs-toggle="modal"
-                                    data-bs-target="#editExecutive"
+                                    data-bs-target="#editExecutive{{ $executive->id }}"
                                 >
                                     <i class="bi bi-pencil"></i>
                                 </button>
@@ -165,7 +165,7 @@
                     </div>
 
                     {{-- Modal to edit executive information --}}
-                    <div class="modal fade mt-0" id="editExecutive" tabindex="-1">
+                    <div class="modal fade mt-0" id="editExecutive{{ $executive->id }}" tabindex="-1">
                         <div class="modal-dialog modal-fullscreen-md-down">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -181,8 +181,8 @@
                                     <form action="" enctype="multipart/form-data">
                                         <div class="form-group mb-3">
                                             <label class="lead" for="execImage"
-                                            >Executive image</label
-                                            >
+                                            >Executive image</label>
+                                            <p class="text-secondary my-0"><small><strong>If you wish to keep the current image, leave this section as is</strong></small></p>
                                             <input
                                                 type="file"
                                                 class="form-control"
@@ -192,31 +192,44 @@
 
                                         <div class="form-group mb-3">
                                             <label class="lead" for="name">Name</label>
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="James Doe" required />
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Jason Appiatu" value="{{ $executive->name }}" required />
                                         </div>
 
                                         <div class="form-group mb-3">
                                             <label class="lead" for="program"
                                             >Program</label
                                             >
-                                            <input type="text" id="program" name="program" class="form-control" placeholder="B.Sc. Computer Science" required>
+                                            <input type="text" id="program" name="program" class="form-control" placeholder="B.Sc. Computer Science" value="{{ $executive->program }}" required>
                                         </div>
 
                                         <div class="form-group mb-3">
                                             <label class="lead" for="contact"
                                             >Contact</label
                                             >
-                                            <input type="text" id="contact" name="contact" class="form-control" placeholder="0123456789 / 0123456789" required>
+                                            <input type="text" id="contact" name="contact" class="form-control" placeholder="0123456789 / 0123456789" value="{{ $executive->contact }}" required>
                                         </div>
 
                                         <div class="form-group mb-3">
                                             <label class="lead" for="office"
                                             >Office</label
                                             >
-                                            <input type="text" id="office" name="office" class="form-control" placeholder="Music Wing President" required>
+                                            <input type="text" id="office" name="office" class="form-control" placeholder="Music Wing President" value="{{ $executive->office }}" required>
                                         </div>
 
-                                        <button class="btn btn-nubsBlue">Save changes</button>
+                                        <div class="form-group mb-3">
+                                            <label class="lead" for="year_group"
+                                            >Year group</label
+                                            >
+                                            <select name="year_group" id="year_group" class="form-control" required>
+                                                @forelse($year_groups as $year_group)
+                                                    <option value="{{ $year_group->id }}" {!! $executive->year_group_id == $year_group->id ? 'selected' : '' !!}>{{ $year_group->year_group }}</option>
+                                                @empty
+                                                    <option value="#" disabled>No year group added</option>
+                                                @endforelse
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-nubsBlue">Save changes <i class="bi bi-save"></i></button>
                                     </form>
                                 </div>
                             </div>
