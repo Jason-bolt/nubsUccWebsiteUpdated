@@ -35,9 +35,21 @@
                             />
                             <h5 class="card-title my-2">Name of executive</h5>
                             <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
+                                <h6 class="text-secondary mb-1">
+                                    <small>
+                                        <i class="bi bi-book"></i> B.Sc. Computer Science
+                                    </small>
+                                </h6>
+                                <h6 class="text-secondary mb-1">
+                                    <small>
+                                        <i class="bi bi-phone"></i> 0123456789 / 0123456789
+                                    </small>
+                                </h6>
+                                <h6 class="text-secondary mt-3 text-capitalize">
+                                    <strong>
+                                        music wing president
+                                    </strong>
+                                </h6>
                             </div>
                             <button
                                 class="btn btn-nubsBlue rounded-pill py-1 px-3"
@@ -55,7 +67,8 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="editExecutive" tabindex="-1">
+                {{-- Modal to edit executive information --}}
+                <div class="modal fade mt-0" id="editExecutive" tabindex="-1">
                     <div class="modal-dialog modal-fullscreen-md-down">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -79,21 +92,33 @@
                                             name="execImage"
                                         />
                                     </div>
+
                                     <div class="form-group mb-3">
                                         <label class="lead" for="name">Name</label>
-                                        <input type="text" class="form-control" name="execName" />
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="James Doe" required />
                                     </div>
+
                                     <div class="form-group mb-3">
-                                        <label class="lead" for="execDescription"
-                                        >Description of executive</label
+                                        <label class="lead" for="program"
+                                        >Program</label
                                         >
-                                        <textarea
-                                            name="execDescription"
-                                            id="execDescription"
-                                            rows="7"
-                                            class="form-control"
-                                        ></textarea>
+                                        <input type="text" id="program" name="program" class="form-control" placeholder="B.Sc. Computer Science" required>
                                     </div>
+
+                                    <div class="form-group mb-3">
+                                        <label class="lead" for="contact"
+                                        >Contact</label
+                                        >
+                                        <input type="text" id="contact" name="contact" class="form-control" placeholder="0123456789 / 0123456789" required>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label class="lead" for="office"
+                                        >Office</label
+                                        >
+                                        <input type="text" id="office" name="office" class="form-control" placeholder="Music Wing President" required>
+                                    </div>
+
                                     <button class="btn btn-nubsBlue">Save changes</button>
                                 </form>
                             </div>
@@ -101,403 +126,6 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="py-4"></div>
-
-            <h2 class="my-5" id="#20_21">2020/21 Batch of Executives</h2>
-            <div class="row text-center g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card text-center shadow">
-                        <div class="card-body">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/11.jpg"
-                                alt="executive"
-                                class="rounded-circle"
-                            />
-                            <h5 class="card-title my-2">Name of executive</h5>
-                            <div class="card-text">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                                natus quisquam saepe explicabo. Id iste, minus quos autem
-                                quasi est!
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="py-4"></div>
