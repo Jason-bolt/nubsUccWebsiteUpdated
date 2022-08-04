@@ -91,15 +91,10 @@
             <!-- Buttons of year groups -->
 
             @forelse($year_groups as $year_group)
-                <a href="#19_20" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
-                >2019/20</a
+                <a href="#{{ $year_group->id }}" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
                 >
-                <a href="#20_21" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
-                >2020/21</a
-                >
-                <a href="#21_22" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
-                >2021/22</a
-                >
+                    {{ $year_group->year_group }}
+                </a>
             @empty
                 <p class="lead">
                     <small>
@@ -109,7 +104,8 @@
             @endforelse
 
             {{-- Add a new year group --}}
-            <form action="#" method="POST">
+            <form action="{{ route('add_year_group') }}" method="POST">
+                @csrf
                 <button class="btn btn-outline-secondary rounded-pill">
                     New <i class="bi bi-plus-lg"></i>
                 </button>

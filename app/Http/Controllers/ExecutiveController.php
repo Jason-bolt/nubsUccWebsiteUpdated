@@ -24,6 +24,29 @@ class ExecutiveController extends Controller
     }
 
     /**
+     * Add a new year group.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function add_year_group(Request $request)
+    {
+        $current_year_group = YearGroup::get()->last();
+        if ($current_year_group == null)
+        {
+            $new_year_group = "2019/20";
+        }else{
+            $broken_down_year_group = preg_split('/', $current_year_group);
+            dd($broken_down_year_group);
+        }
+//        dd($current_year_group);
+
+        YearGroup::create([
+            'year_group' => $new_year_group
+        ]);
+        return back()->with('status', 'New year group added!');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
