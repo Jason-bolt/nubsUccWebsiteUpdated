@@ -30,15 +30,21 @@ class ExecutiveController extends Controller
      */
     public function add_year_group(Request $request)
     {
-        $current_year_group = YearGroup::get()->last();
+        $current_year_group = YearGroup::get('year_group')->last();
         if ($current_year_group == null)
         {
             $new_year_group = "2019/20";
         }else{
-            $broken_down_year_group = preg_split('/', $current_year_group);
-            dd($broken_down_year_group);
+            // Separate the years
+            $broken_down_year_group = preg_split('*/*', $current_year_group->year_group);
+
+            // Add 1 to both years
+            $first_year = (int)$broken_down_year_group[0] + 1;
+            $second_year = (int)$broken_down_year_group[1] + 1;
+
+            // Combining the years again
+            $new_year_group = $first_year . '/' . $second_year;
         }
-//        dd($current_year_group);
 
         YearGroup::create([
             'year_group' => $new_year_group
