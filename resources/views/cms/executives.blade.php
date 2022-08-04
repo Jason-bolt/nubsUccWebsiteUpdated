@@ -28,7 +28,8 @@
                         ></button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('add_executive') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-group mb-3">
                                 <label class="lead" for="image"
                                 >Executive image</label

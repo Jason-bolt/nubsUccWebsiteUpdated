@@ -56,6 +56,7 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/executives', [ExecutiveController::class, 'get_executives'])->name('get_executives');
         Route::post('/executives/add-year-group', [ExecutiveController::class, 'add_year_group'])->name('add_year_group');
+        Route::post('/executives', [ExecutiveController::class, 'store'])->name('add_executive');
 //        Route::post('/gallery', [GalleryController::class, 'store'])->name('add_album');
 //        Route::put('/gallery/{gallery}', [GalleryController::class, 'update']);
 //        Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy']);

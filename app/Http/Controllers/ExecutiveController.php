@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Executive;
 use App\Models\YearGroup;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ExecutiveController extends Controller
 {
@@ -66,11 +67,40 @@ class ExecutiveController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image' => ['required', 'image', 'max:5120'],
+            'name' => ['required', 'string'],
+            'program' => ['required', 'string'],
+            'contact' => ['required', 'string'],
+            'office' => ['required', 'string'],
+            'year_group' => ['required', 'integer']
+        ]);
+
+        $file = $request->file('image');
+        $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
+
+        // Save image under different file name (using the date)
+        $image_filename = date('YmdHi') . $formatted_image_name;
+
+        // Always ensure directory exists before running this code.
+        // Image::..->save(location) does not automatically create directory
+        $location = public_path('images/executive/' . $image_filename);
+        Image::make($file)->resize(720,720)->save($location);
+
+        Executive::create([
+            'photo' => $image_filename,
+            'name' => $request->name,
+            'program' => $request->program,
+            'contact' => $request->contact,
+            'office' => $request->office,
+            'year_group_id' => $request->year_group
+        ]);
+
+        return back()->with('status', 'Executive added!');
     }
 
     /**
