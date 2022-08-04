@@ -109,7 +109,7 @@
             @endforelse
 
             {{-- Add a new year group --}}
-            <form action="{{ route('add_year_group') }}" method="POST">
+            <form action="{{ route('add_year_group') }}" method="POST" onsubmit="return confirm('A new year group will be added. This action can not be reversed!')">
                 @csrf
                 <button class="btn btn-outline-secondary rounded-pill">
                     New <i class="bi bi-plus-lg"></i>

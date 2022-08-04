@@ -17,9 +17,19 @@ class ExecutiveController extends Controller
     public function get_executives()
     {
         $page = 'Executives';
+
+        // Check if the year group table is empty. If empty add 2019/20 year group
+        $year_group_exists = YearGroup::get()->first();
+        if ($year_group_exists == null)
+        {
+            YearGroup::create([
+                'year_group' => '2019/20'
+            ]);
+        }
+
         $year_groups = YearGroup::all();
 
-        // Get latest year group id
+        // Get the latest year group id
         $latest_year_group_id = YearGroup::get('id')
                 ->last()
                 ->id;
@@ -46,6 +56,19 @@ class ExecutiveController extends Controller
     public function get_executives_of_a_batch($id)
     {
         $page = 'Executives';
+
+        // Check if the year group table is empty. If empty add 2019/20 year group
+        $year_group_exists = YearGroup::get()->first();
+        $year_group_for_id = YearGroup::where('id', $id)->get()->first();
+
+//        dd($year_group_for_id);
+//        dd($year_group_exists);
+
+        if ($year_group_exists == null || $year_group_for_id == null)
+        {
+            return $this->get_executives();
+        }
+
         $year_groups = YearGroup::all();
 
         // Selected year group id
@@ -56,6 +79,7 @@ class ExecutiveController extends Controller
             ->get('year_group')
             ->first()
             ->year_group;
+
         return view('cms.executives')->with([
             'page' => $page,
             'year_groups' => $year_groups,
