@@ -44,11 +44,9 @@
         <div class="container">
             <p class="display-3">Welcome To NUBS UCC</p>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quae
-                minus eveniet dolore quibusdam praesentium eum suscipit, quidem
-                officia fugit iusto tenetur sequi cum ullam cumque. Ullam quod,
-                dolorum esse cumque expedita neque vero magni iure, inventore quasi
-                possimus. Repellat.
+                The National Union of Baptist Students (NUBS) is a Christian students’ organization comprising of Local Baptist Student Unions. The NUBS is a recognized auxiliary of the Ghana Baptist Convention (GBC)
+                The motto of NUBS is “Presenting everyman perfect in Christ” as captured in Colossians 1:28 in the HOLY BIBLE. The slogan of NUBS is “Empowered!! For Action!!!”
+
             </p>
             <a href="{{ route('about') }}" class="btn btn-nubsBlue px-4 py-2">Learn More</a>
         </div>

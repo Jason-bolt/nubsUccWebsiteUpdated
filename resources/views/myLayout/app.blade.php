@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NUBS UCC</title>
+    <title>NUBS UCC - {{ $page }}</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -50,28 +50,28 @@
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="{{ route('home') }}" class="nav-link {{ $page == "home" ? "active" : '' }}">Home</a>
+                        <a href="{{ route('home') }}" class="nav-link {{ $page == "Home" ? "active" : '' }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('about') }}" class="nav-link {{ $page == "about" ? "active" : '' }}">About</a>
+                        <a href="{{ route('about') }}" class="nav-link {{ $page == "About" ? "active" : '' }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('news_events') }}" class="nav-link {{ $page == "news_events" ? "active" : '' }}">News/Events</a>
+                        <a href="{{ route('news_events') }}" class="nav-link {{ $page == "News/Events" ? "active" : '' }}">News/Events</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('gallery') }}" class="nav-link {{ $page == "gallery" ? "active" : '' }}">Gallery</a>
+                        <a href="{{ route('gallery') }}" class="nav-link {{ $page == "Gallery" ? "active" : '' }}">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('departments') }}" class="nav-link {{ $page == "departments" ? "active" : '' }}">Departments</a>
+                        <a href="{{ route('departments') }}" class="nav-link {{ $page == "Departments" ? "active" : '' }}">Departments</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('executives') }}" class="nav-link {{ $page == "executives" ? "active" : '' }}">Executives</a>
+                        <a href="{{ route('executives') }}" class="nav-link {{ $page == "Executives" ? "active" : '' }}">Executives</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('contact') }}" class="nav-link {{ $page == "contact" ? "active" : '' }}">Contact</a>
+                        <a href="{{ route('contact') }}" class="nav-link {{ $page == "Contact" ? "active" : '' }}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('donate') }}" class="nav-link {{ $page == "donate" ? "active" : '' }}"><u>Donate</u></a>
+                        <a href="{{ route('donate') }}" class="nav-link {{ $page == "Donate" ? "active" : '' }}"><u>Donate</u></a>
                     </li>
                 </ul>
             </div>

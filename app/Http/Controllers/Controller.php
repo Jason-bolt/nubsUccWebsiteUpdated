@@ -14,7 +14,7 @@ class Controller extends BaseController
 
     public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "home";
+        $page = "Home";
         $weekly_activities = WeeklyActivity::all();
         return view('index')->with([
             'page' => $page,
@@ -24,7 +24,7 @@ class Controller extends BaseController
 
     public function about(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "about";
+        $page = "About";
         return view('about')->with([
             'page' => $page
         ]);
@@ -32,7 +32,7 @@ class Controller extends BaseController
 
     public function news_events(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "news_events";
+        $page = "News/Events";
         return view('news_events')->with([
             'page' => $page
         ]);
@@ -40,7 +40,7 @@ class Controller extends BaseController
 
     public function gallery(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "gallery";
+        $page = "Gallery";
         return view('gallery')->with([
             'page' => $page
         ]);
@@ -48,7 +48,7 @@ class Controller extends BaseController
 
     public function departments(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "departments";
+        $page = "Departments";
         return view('departments')->with([
             'page' => $page
         ]);
@@ -56,7 +56,7 @@ class Controller extends BaseController
 
     public function executives(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "executives";
+        $page = "Executives";
         return view('executives')->with([
             'page' => $page
         ]);
@@ -64,7 +64,7 @@ class Controller extends BaseController
 
     public function contact(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "contact";
+        $page = "Contact";
         return view('contact')->with([
             'page' => $page
         ]);
@@ -72,7 +72,7 @@ class Controller extends BaseController
 
     public function donate(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        $page = "donate";
+        $page = "Donate";
         return view('donate')->with([
             'page' => $page
         ]);
