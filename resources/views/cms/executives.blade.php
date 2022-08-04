@@ -155,7 +155,9 @@
                                 >
                                     <i class="bi bi-pencil"></i>
                                 </button>
-                                <form action="" class="d-inline">
+                                <form action="executives/{{ $executive->id }}" method="POST" class="d-inline" onsubmit="return confirm('This executive will be deleted!')">
+                                    @method('delete')
+                                    @csrf
                                     <button class="btn btn-danger rounded-pill py-1 px-3">
                                         <i class="ib bi-trash"></i>
                                     </button>
@@ -237,7 +239,7 @@
                     </div>
                 @empty
                     <p class="display-6 py-5 my-5">
-                        No Executive for this page!
+                        No Executive for this batch!
                     </p>
                 @endforelse
 

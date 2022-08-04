@@ -163,10 +163,12 @@ class ExecutiveController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Executive  $executive
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Executive $executive)
     {
-        //
+        $executive->delete();
+
+        return back()->with('status', 'Executive deleted!');
     }
 }
