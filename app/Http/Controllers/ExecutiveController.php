@@ -18,11 +18,33 @@ class ExecutiveController extends Controller
     {
         $page = 'Executives';
         $year_groups = YearGroup::all();
+
+        // Get latest year group id
+        $latest_year_group_id = YearGroup::get('id')
+                ->last()
+                ->id;
+        $executives = Executive::where('year_group_id', '=', $latest_year_group_id)->get();
+        $batch = YearGroup::where('id', '=', $latest_year_group_id)
+                ->get('year_group')
+                ->first()
+                ->year_group;
         return view('cms.executives')->with([
             'page' => $page,
-            'year_groups' => $year_groups
+            'year_groups' => $year_groups,
+            'executives' => $executives,
+            'batch' => $batch
         ]);
     }
+
+//    public function get_executive_of_a_batch()
+//    {
+//        $page = 'Executives';
+//        $year_groups = YearGroup::all();
+//        return view('cms.executives')->with([
+//            'page' => $page,
+//            'year_groups' => $year_groups
+//        ]);
+//    }
 
     /**
      * Add a new year group.
