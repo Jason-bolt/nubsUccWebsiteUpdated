@@ -170,11 +170,46 @@ class ExecutiveController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Executive  $executive
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Executive $executive)
     {
-        //
+        $request->validate([
+            'image' => ['nullable', 'image', 'max:5120'],
+            'name' => ['required', 'string'],
+            'program' => ['required', 'string'],
+            'contact' => ['required', 'string'],
+            'office' => ['required', 'string'],
+            'year_group' => ['required', 'integer']
+        ]);
+
+        if ($request->file('image'))
+        {
+            $file = $request->file('image');
+            $formatted_image_name = str_replace(" ", "_", $file->getClientOriginalName());
+
+            // Save image under different file name (using the date)
+            $image_filename = date('YmdHi') . $formatted_image_name;
+
+            // Always ensure directory exists before running this code.
+            // Image::..->save(location) does not automatically create directory
+            $location = public_path('images/executive/' . $image_filename);
+            Image::make($file)->resize(720,720)->save($location);
+        }else{
+            $image_filename = $executive->photo;
+        }
+
+        Executive::where('id', $executive->id)
+            ->update([
+                'photo' => $image_filename,
+                'name' => $request->name,
+                'program' => $request->program,
+                'contact' => $request->contact,
+                'office' => $request->office,
+                'year_group_id' => $request->year_group
+            ]);
+
+        return back()->with('status', 'Executive added!');
     }
 
     /**
