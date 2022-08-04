@@ -155,7 +155,7 @@
                                 >
                                     <i class="bi bi-pencil"></i>
                                 </button>
-                                <form action="executives/{{ $executive->id }}" method="POST" class="d-inline" onsubmit="return confirm('This executive will be deleted!')">
+                                <form action="/cms/executives/{{ $executive->id }}" method="POST" class="d-inline" onsubmit="return confirm('This executive will be deleted!')">
                                     @method('delete')
                                     @csrf
                                     <button class="btn btn-danger rounded-pill py-1 px-3">
