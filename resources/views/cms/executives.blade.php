@@ -96,7 +96,7 @@
 
             <!-- Buttons of year groups -->
             @forelse($year_groups as $year_group)
-                <a href="/{{ $year_group->id }}" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
+                <a href="/cms/executives/{{ $year_group->id }}#executives" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
                 >
                     {{ $year_group->year_group }}
                 </a>
@@ -118,7 +118,7 @@
 
 
             <!-- Batch of Executives -->
-            <h2 class="my-5" id="#1920">{{ $batch }} Batch of Executives</h2>
+            <h2 class="my-5" id="executives">{{ $batch }} Batch of Executives</h2>
             <div class="row text-center g-4">
 
                 @forelse($executives as $executive)
@@ -130,9 +130,9 @@
                                     alt="executive"
                                     class="rounded-circle img-fluid"
                                 />
-                                <h5 class="card-title my-2">{{ $executive->name }}</h5>
+                                <h5 class="card-title my-2 text-capitalize">{{ $executive->name }}</h5>
                                 <div class="card-text">
-                                    <h6 class="text-secondary mb-1">
+                                    <h6 class="text-secondary mb-1 text-capitalize">
                                         <small>
                                             <i class="bi bi-book"></i> {{ $executive->program }}
                                         </small>
@@ -244,7 +244,6 @@
                 @endforelse
 
             </div>
-
 
         </div>
     </section>

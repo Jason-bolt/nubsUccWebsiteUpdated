@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy']);
 
         Route::get('/executives', [ExecutiveController::class, 'get_executives'])->name('get_executives');
-        Route::get('/executives/{id}', [ExecutiveController::class, 'get_executives_of_a_batch'])->name('get_executive_of_a_batch');
+        Route::get('/executives/{id}', [ExecutiveController::class, 'get_executives_of_a_batch']);
         Route::post('/executives/add-year-group', [ExecutiveController::class, 'add_year_group'])->name('add_year_group');
         Route::post('/executives', [ExecutiveController::class, 'store'])->name('add_executive');
 //        Route::put('/gallery/{gallery}', [GalleryController::class, 'update']);

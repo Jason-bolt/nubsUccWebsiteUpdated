@@ -10,7 +10,7 @@ use Intervention\Image\Facades\Image;
 class ExecutiveController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display executives of current batch.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
@@ -23,6 +23,7 @@ class ExecutiveController extends Controller
         $latest_year_group_id = YearGroup::get('id')
                 ->last()
                 ->id;
+
         $executives = Executive::where('year_group_id', '=', $latest_year_group_id)->get();
         $batch = YearGroup::where('id', '=', $latest_year_group_id)
                 ->get('year_group')
@@ -36,15 +37,32 @@ class ExecutiveController extends Controller
         ]);
     }
 
-//    public function get_executive_of_a_batch()
-//    {
-//        $page = 'Executives';
-//        $year_groups = YearGroup::all();
-//        return view('cms.executives')->with([
-//            'page' => $page,
-//            'year_groups' => $year_groups
-//        ]);
-//    }
+    /**
+     * Display executives of selected batch.
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function get_executives_of_a_batch($id)
+    {
+        $page = 'Executives';
+        $year_groups = YearGroup::all();
+
+        // Selected year group id
+        $year_group_id = $id;
+
+        $executives = Executive::where('year_group_id', '=', $year_group_id)->get();
+        $batch = YearGroup::where('id', '=', $year_group_id)
+            ->get('year_group')
+            ->first()
+            ->year_group;
+        return view('cms.executives')->with([
+            'page' => $page,
+            'year_groups' => $year_groups,
+            'executives' => $executives,
+            'batch' => $batch
+        ]);
+    }
 
     /**
      * Add a new year group.
