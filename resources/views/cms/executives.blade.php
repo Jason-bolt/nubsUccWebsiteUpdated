@@ -128,7 +128,7 @@
                                 <img
                                     src="{{ asset('images/executive/' . $executive->photo) }}"
                                     alt="executive"
-                                    class="rounded-circle"
+                                    class="rounded-circle img-fluid"
                                 />
                                 <h5 class="card-title my-2">{{ $executive->name }}</h5>
                                 <div class="card-text">
