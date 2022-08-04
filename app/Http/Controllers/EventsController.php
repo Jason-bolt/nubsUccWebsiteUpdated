@@ -95,7 +95,7 @@ class EventsController extends Controller
     public function update(Request $request, Event $event)
     {
         $request->validate([
-            'image' => ['nullabe', 'image'],
+            'image' => ['nullable', 'image'],
             'description' => ['nullable', 'required', 'string']
         ]);
         $id = $event->id;
