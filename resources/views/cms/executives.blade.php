@@ -80,7 +80,7 @@
                                 </select>
                             </div>
 
-                            <button class="btn btn-nubsBlue">Save changes</button>
+                            <button class="btn btn-nubsBlue">Save changes <i class="bi bi-save"></i></button>
                         </form>
                     </div>
                 </div>
