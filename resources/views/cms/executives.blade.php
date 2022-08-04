@@ -89,15 +89,24 @@
     <section class="p-sm-5">
         <div class="container">
             <!-- Buttons of year groups -->
-            <a href="#19_20" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
-            >2019/20</a
-            >
-            <a href="#20_21" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
-            >2020/21</a
-            >
-            <a href="#21_22" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
-            >2021/22</a
-            >
+
+            @forelse($year_groups as $year_group)
+                <a href="#19_20" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
+                >2019/20</a
+                >
+                <a href="#20_21" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
+                >2020/21</a
+                >
+                <a href="#21_22" class="btn btn-nubsBlue rounded-pill px-3 shadow my-2"
+                >2021/22</a
+                >
+            @empty
+                <p class="lead">
+                    <small>
+                        No year group added!
+                    </small>
+                </p>
+            @endforelse
 
             {{-- Add a new year group --}}
             <form action="#" method="POST">

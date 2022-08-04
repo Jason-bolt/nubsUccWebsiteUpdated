@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Executive;
+use App\Models\YearGroup;
 use Illuminate\Http\Request;
 
 class ExecutiveController extends Controller
@@ -15,8 +16,10 @@ class ExecutiveController extends Controller
     public function get_executives()
     {
         $page = 'Executives';
+        $year_groups = YearGroup::all();
         return view('cms.executives')->with([
-            'page' => $page
+            'page' => $page,
+            'year_groups' => $year_groups
         ]);
     }
 
