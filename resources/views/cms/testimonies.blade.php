@@ -41,7 +41,7 @@
                                         class="rounded-circle"
                                     />
                                     <h5 class="my-2">{{ $testimony->name }}</h5>
-                                    <p>{{ $testimony->testimony }}</p>
+                                    <p style="white-space: pre-wrap">{{ $testimony->testimony }}</p>
                                 </div>
                                 <div class="mt-4">
                                     <button
