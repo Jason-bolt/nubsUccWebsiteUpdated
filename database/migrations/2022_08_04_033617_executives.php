@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string('program');
             $table->string('contact');
             $table->string('office');
+            $table->unsignedInteger('year_group_id');
+            $table->foreign('year_group_id')
+                ->references('id')
+                ->on('year_groups')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
