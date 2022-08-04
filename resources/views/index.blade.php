@@ -216,7 +216,7 @@
     </section>
 
     <!-- Upcoming Events -->
-    <section>
+    <section class="mb-5">
         <div class="container p-sm-5">
             <h1>Up Coming Events</h1>
         </div>
@@ -226,9 +226,6 @@
                 @forelse($events as $index => $event)
                     <div class="carousel-item active">
                         <img src="{{ asset('images/events/' . $event->image) }}" class="d-block w-100" alt="1" />
-                        <div class="container mb-4 py-3">
-                            {{ $event->description }}
-                        </div>
                     </div>
                 @empty
                     <p class="lead py-5 my-5 text-center">
