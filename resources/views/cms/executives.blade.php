@@ -100,9 +100,11 @@
             >
 
             {{-- Add a new year group --}}
-            <a href="#" class="btn btn-outline-secondary rounded-pill">
-                New <i class="bi bi-plus-lg"></i>
-            </a>
+            <form action="#" method="POST">
+                <button class="btn btn-outline-secondary rounded-pill">
+                    New <i class="bi bi-plus-lg"></i>
+                </button>
+            </form>
 
 
             <!-- Result of search -->
