@@ -14,6 +14,7 @@ class Executive extends Model
         'name',
         'program',
         'contact',
-        'office'
+        'office',
+        'year_group_id'
     ];
 }
