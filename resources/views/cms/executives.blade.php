@@ -71,8 +71,12 @@
                                 <label class="lead" for="year_group"
                                 >Year group</label
                                 >
-                                <select name="year_group" id="year_group" class="form-control">
-                                    <option value="1">2019/20</option>
+                                <select name="year_group" id="year_group" class="form-control" required>
+                                    @forelse($year_groups as $year_group)
+                                        <option value="{{ $year_group->id }}">{{ $year_group->year_group }}</option>
+                                    @empty
+                                        <option value="#" disabled>No year group added</option>
+                                    @endforelse
                                 </select>
                             </div>
 
