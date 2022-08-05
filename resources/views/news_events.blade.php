@@ -45,25 +45,18 @@
             <h1>Up Coming Events</h1>
         </div>
 
-        <div id="events" class="carousel slide" data-bs-ride="carousel">
+        <div id="events" class="carousel slide mb-3" data-bs-ride="carousel">
             <div class="carousel-inner">
-{{--                @forelse($events as $event)--}}
-{{--                    --}}
-{{--                @empty--}}
-{{--                    --}}
-{{--                @endforelse--}}
-                <div class="carousel-item active">
-                    <img src="{{ asset('sysImages/carousel2.jpg') }}" class="d-block w-100" alt="1" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('sysImages/carousel3.jpg') }}" class="d-block w-100" alt="2" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('sysImages/carousel4.jpg') }}" class="d-block w-100" alt="3" />
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('sysImages/carousel1.jpg') }}" class="d-block w-100" alt="4" />
-                </div>
+                @forelse($events as $index => $event)
+                    <div class="carousel-item {!! $index == 0 ? 'active' : '' !!}">
+                        <img src="{{ asset('images/events/' . $event->image) }}" class="d-block w-100" alt="Event image" />
+                        <p style="white-space: pre-wrap" class="pt-4 container">{{ $event->description }}</p>
+                    </div>
+                @empty
+                    <p class="lead py-5 my-5">
+                        No testimony in the system at the moment...
+                    </p>
+                @endforelse
             </div>
             <button
                 class="carousel-control-prev"
