@@ -19,26 +19,23 @@
     <!-- Executives Per Batch -->
     <section class="p-sm-5">
         <div class="container">
-            <form action="#" method="get">
+            <form action="{{ route('executives_for_batch') }}" method="POST">
+                @csrf
                 <p class="h4 pb-4 text-center">Please select a year group</p>
                 <div class="d-flex justify-content-center align-items-center">
                     <div class="ms-auto w-50">
                         <div class="form-group">
-                            <select name="yearGroup" id="yearGroup" class="form-control">
+                            <select name="year_group_id" id="yearGroup" class="form-control">
                                 @foreach($year_groups as $year_group)
-                                    <option value="{{ $year_group->year_group }}">{{ $year_group->year_group }}</option>
+                                    <option value="{{ $year_group->id }}">{{ $year_group->year_group }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    <div class="me-auto ms-4">
-                        <input
-                            type="submit"
-                            name="yearGroupSubmit"
-                            class="btn btn-nubsBlue px-4"
-                            value="Go"
-                        />
-                    </div>
+
+                    <button type="submit" class="btn btn-nubsBlue me-auto ms-4">
+                        Submit
+                    </button>
                 </div>
             </form>
 

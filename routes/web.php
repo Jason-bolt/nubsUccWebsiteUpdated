@@ -26,7 +26,7 @@ Route::get('/testimonies', [Controller::class, 'testimonies'])->name('testimonie
 Route::get('/gallery', [Controller::class, 'gallery'])->name('gallery');
 Route::get('/departments', [Controller::class, 'departments'])->name('departments');
 Route::get('/executives', [Controller::class, 'executives'])->name('executives');
-Route::get('/executives/{id}', [Controller::class, 'executives_for_batch']);
+Route::post('/executives', [Controller::class, 'executives_for_batch'])->name('executives_for_batch');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
 Route::get('/donate', [Controller::class, 'donate'])->name('donate');
 
