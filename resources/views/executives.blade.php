@@ -20,7 +20,7 @@
     <section class="p-sm-5">
         <div class="container">
             <form action="#" method="get">
-                <p class="h4 pb-4">Please select a year group</p>
+                <p class="h4 pb-4 text-center">Please select a year group</p>
                 <div class="d-flex justify-content-center align-items-center">
                     <div class="ms-auto w-50">
                         <div class="form-group">
