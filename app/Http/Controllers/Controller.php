@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Executive;
 use App\Models\Gallery;
 use App\Models\Testimony;
 use App\Models\WeeklyActivity;
+use App\Models\YearGroup;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -103,8 +105,27 @@ class Controller extends BaseController
     public function executives(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Executives";
+
+        $year_groups = YearGroup::all();
+
+        // Get the latest year group id
+        $latest_year_group_id = YearGroup::get('id')
+            ->last()
+            ->id;
+
+        $executives = Executive::where('year_group_id', '=', $latest_year_group_id)->get();
+        $batch = YearGroup::where('id', '=', $latest_year_group_id)
+            ->get('year_group')
+            ->first()
+            ->year_group;
+
+
+
         return view('executives')->with([
-            'page' => $page
+            'page' => $page,
+            'year_groups' => $year_groups,
+            'executives' => $executives,
+            'batch' => $batch
         ]);
     }
 

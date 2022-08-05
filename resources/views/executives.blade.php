@@ -25,9 +25,9 @@
                     <div class="ms-auto w-50">
                         <div class="form-group">
                             <select name="yearGroup" id="yearGroup" class="form-control">
-                                <option value="20-21">2019/20 batch</option>
-                                <option value="20-21">2020/21 batch</option>
-                                <option value="20-21">2021/22 batch</option>
+                                @foreach($year_groups as $year_group)
+                                    <option value="{{ $year_group->year_group }}">{{ $year_group->year_group }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
