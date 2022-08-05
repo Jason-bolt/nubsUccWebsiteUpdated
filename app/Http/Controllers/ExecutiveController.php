@@ -55,6 +55,7 @@ class ExecutiveController extends Controller
      */
     public function get_executives_of_a_batch($id)
     {
+        // $id belongs to the year_group id
         $page = 'Executives';
 
         // Check if the year group table is empty. If empty add 2019/20 year group

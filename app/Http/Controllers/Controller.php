@@ -129,6 +129,42 @@ class Controller extends BaseController
         ]);
     }
 
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
+    public function executives_for_batch($id): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        // $id belongs to the year_group id
+
+        $year_group_for_id = YearGroup::where('id', $id)->get()->first();
+
+        if ($year_group_for_id == null)
+        {
+            return $this->executives();
+        }
+
+        $page = "Executives";
+
+        $year_groups = YearGroup::all();
+
+        // Selected year group id
+        $year_group_id = $id;
+
+        $executives = Executive::where('year_group_id', '=', $year_group_id)->get();
+        $batch = YearGroup::where('id', '=', $year_group_id)
+            ->get('year_group')
+            ->first()
+            ->year_group;
+
+        return view('executives')->with([
+            'page' => $page,
+            'year_groups' => $year_groups,
+            'executives' => $executives,
+            'batch' => $batch
+        ]);
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
      */
