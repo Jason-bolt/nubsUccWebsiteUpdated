@@ -256,6 +256,11 @@
                     </div>
                 </div>
             </div>
+
+            <a href="#" class="btn btn-nubsBlue">
+                View all testimonies <i class="bi bi-chevron-right"></i>
+            </a>
+
         </div>
     </section>
 
