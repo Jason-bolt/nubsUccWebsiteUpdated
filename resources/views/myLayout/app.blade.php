@@ -86,8 +86,8 @@
 <section class="py-5 p-sm-5">
     <div class="container text-center">
         <h3>Follow Us On</h3>
-        <a href="https://www.facebook.com/nubsucc12/"><i class="bi bi-instagram text-dark mx-1 h3 mx-2"></i></a>
-        <a href="#"><i class="bi bi-facebook text-dark mx-1 h3 mx-2"></i></a>
+        <a href="https://www.instagram.com/nubsucc/" target="_blank"><i class="bi bi-instagram text-dark mx-1 h3 mx-2"></i></a>
+        <a href="https://www.facebook.com/nubsucc12/" target="_blank"><i class="bi bi-facebook text-dark mx-1 h3 mx-2"></i></a>
         <p class="lead mb-0 mt-4" style="color: red">
             <em>Empowered... For action!!!</em>
         </p>

@@ -53,7 +53,7 @@ class EventsController extends Controller
         // Always ensure directory exists before running this code.
         // Image::..->save(location) does not automatically create directory
         $location = public_path('images/events/' . $image_filename);
-        Image::make($file)->resize(1366,900)->save($location);
+        Image::make($file)->resize(1366,500)->save($location);
 
         Event::create([
             'image' => $image_filename,

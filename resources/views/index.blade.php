@@ -58,7 +58,7 @@
     <section class="p-sm-5 py-5">
         <div class="container text-center">
             <div class="d-md-flex align-items-center justify-content-between">
-                <div class="px-sm-5 mb-md-none">
+                <div class="px-sm-5 mb-md-0 mb-5">
                     <!-- Mission statement -->
                     <p class="display-4">Our Mission</p>
                     <p class="lead">
@@ -85,7 +85,7 @@
 
     <!-- Prayer Request -->
     <section
-        class="py-5 p-sm-5 text-white"
+        class="py-5 p-sm-5 mb-sm-4 text-white"
         style="background-color: rgb(3, 23, 83)"
     >
         <div class="container text-start">
@@ -151,70 +151,6 @@
         </div>
     </section>
 
-    <!-- Testimonies -->
-    <section class="pb-5 pt-5 my-5 pt-sm-0 my-sm-0">
-        <div class="container p-sm-5 text-center">
-            <h1 class="mt-2 mb-5">Testimonies</h1>
-
-            <div class="row ms-auto">
-                <div class="col-md-6 m-auto">
-                    <div
-                        id="testimonies"
-                        class="carousel slide"
-                        data-bs-ride="carousel"
-                    >
-                        <div class="carousel-inner">
-
-                            @forelse($testimonies as $index => $testimony)
-                                <div class="carousel-item {!! $index == 0 ? 'active' : '' !!}">
-                                    <div class="text-center shadow">
-                                        <img
-{{--                                            src="https://randomuser.me/api/portraits/men/11.jpg"--}}
-                                            src="{{ asset('images/testimony/' . $testimony->image) }}"
-                                            alt="executive"
-                                            class="rounded-circle img-fluid"
-                                        />
-                                        <h5 class="my-2">{{ $testimony->name }}</h5>
-                                        <p style="white-space: pre-wrap" class="pb-3">{{ $testimony->testimony }}</p>
-                                    </div>
-                                </div>
-                            @empty
-                                <p class="lead py-5 my-5">
-                                    No testimony in the system at the moment...
-                                </p>
-                            @endforelse
-
-                            <button
-                                class="carousel-control-prev"
-                                type="button"
-                                data-bs-target="#testimonies"
-                                data-bs-slide="prev"
-                            >
-									<span
-                                        class="carousel-control-prev-icon"
-                                        aria-hidden="true"
-                                    ></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button
-                                class="carousel-control-next"
-                                type="button"
-                                data-bs-target="#testimonies"
-                                data-bs-slide="next"
-                            >
-									<span
-                                        class="carousel-control-next-icon"
-                                        aria-hidden="true"
-                                    ></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Upcoming Events -->
     <section class="mb-5">
         <div class="container p-sm-5">
@@ -252,6 +188,74 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+        </div>
+    </section>
+
+    <!-- Testimonies -->
+    <section class="pb-5 pt-5 my-5 pt-sm-0 my-sm-0">
+        <div class="container p-sm-5 text-center">
+            <h1 class="mt-2 mb-5">Testimonies</h1>
+
+            <div class="row ms-auto">
+                <div class="col-md-6 m-auto">
+                    <div
+                        id="testimonies"
+                        class="carousel slide"
+                        data-bs-ride="carousel"
+                    >
+                        <div class="carousel-inner">
+
+                            @forelse($testimonies as $index => $testimony)
+                                <div class="carousel-item {!! $index == 0 ? 'active' : '' !!}">
+                                    <div class="text-center shadow">
+                                        <img
+                                            {{--                                            src="https://randomuser.me/api/portraits/men/11.jpg"--}}
+                                            src="{{ asset('images/testimony/' . $testimony->image) }}"
+                                            alt="executive"
+                                            class="rounded-circle img-fluid"
+                                        />
+                                        <h5 class="my-3">
+                                            <strong>
+                                                {{ $testimony->name }}
+                                            </strong>
+                                        </h5>
+                                        <p style="white-space: pre-wrap" class="pb-3">{{ $testimony->testimony }}</p>
+                                    </div>
+                                </div>
+                            @empty
+                                <p class="lead py-5 my-5">
+                                    No testimony in the system at the moment...
+                                </p>
+                            @endforelse
+
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#testimonies"
+                                data-bs-slide="prev"
+                            >
+									<span
+                                        class="carousel-control-prev-icon"
+                                        aria-hidden="true"
+                                    ></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#testimonies"
+                                data-bs-slide="next"
+                            >
+									<span
+                                        class="carousel-control-next-icon"
+                                        aria-hidden="true"
+                                    ></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
