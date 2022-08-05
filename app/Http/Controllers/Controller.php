@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Testimony;
 use App\Models\WeeklyActivity;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -78,8 +79,10 @@ class Controller extends BaseController
     public function gallery(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Gallery";
+        $albums = Gallery::all();
         return view('gallery')->with([
-            'page' => $page
+            'page' => $page,
+            'albums' => $albums
         ]);
     }
 
