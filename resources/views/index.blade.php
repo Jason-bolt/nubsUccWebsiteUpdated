@@ -257,7 +257,7 @@
                 </div>
             </div>
 
-            <a href="#" class="btn btn-nubsBlue mt-2">
+            <a href="{{ route('testimonies') }}" class="btn btn-nubsBlue mt-2">
                 View all testimonies <i class="bi bi-chevron-right"></i>
             </a>
 

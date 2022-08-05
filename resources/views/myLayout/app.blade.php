@@ -59,6 +59,9 @@
                         <a href="{{ route('news_events') }}" class="nav-link {{ $page == "News/Events" ? "active" : '' }}">News/Events</a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('testimonies') }}" class="nav-link {{ $page == "Testimonies" ? "active" : '' }}">Testimonies</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('gallery') }}" class="nav-link {{ $page == "Gallery" ? "active" : '' }}">Gallery</a>
                     </li>
                     <li class="nav-item">

@@ -14,6 +14,9 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Home";
@@ -29,6 +32,9 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function about(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "About";
@@ -37,6 +43,9 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function news_events(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "News/Events";
@@ -45,6 +54,23 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
+    public function testimonies(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        $page = "Testimonies";
+        $testimonies = Testimony::all();
+//        dd($testimonies);
+        return view('testimonies')->with([
+            'page' => $page,
+            'testimonies' => $testimonies
+        ]);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function gallery(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Gallery";
@@ -53,6 +79,9 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function departments(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Departments";
@@ -61,6 +90,9 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function executives(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Executives";
@@ -69,6 +101,9 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function contact(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Contact";
@@ -77,6 +112,9 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+     */
     public function donate(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "Donate";

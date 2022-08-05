@@ -22,6 +22,7 @@ use App\Http\Controllers\Controller;
 Route::get('/', [Controller::class, 'index'])->name('home');
 Route::get('/about', [Controller::class, 'about'])->name('about');
 Route::get('/news_events', [Controller::class, 'news_events'])->name('news_events');
+Route::get('/testimonies', [Controller::class, 'testimonies'])->name('testimonies');
 Route::get('/gallery', [Controller::class, 'gallery'])->name('gallery');
 Route::get('/departments', [Controller::class, 'departments'])->name('departments');
 Route::get('/executives', [Controller::class, 'executives'])->name('executives');
@@ -44,7 +45,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/events-news/{event}', [EventsController::class, 'update']);
         Route::delete('/events-news/{event}', [EventsController::class, 'destroy']);
 
-        Route::get('/testimonies', [TestimonyController::class, 'testimonies'])->name('all_testimonies');
+        Route::get('/testimonies', [TestimonyController::class, 'all_testimonies'])->name('all_testimonies');
         Route::post('/testimonies', [TestimonyController::class, 'store'])->name('add_testimony');
         Route::put('/testimonies/{testimony}', [TestimonyController::class, 'update']);
         Route::delete('/testimonies/{testimony}', [TestimonyController::class, 'destroy']);

@@ -13,7 +13,7 @@ class TestimonyController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function testimonies()
+    public function all_testimonies()
     {
         $page = "Testimonies";
         $accepted_testimonies = Testimony::where('is_accepted', true)->get();
