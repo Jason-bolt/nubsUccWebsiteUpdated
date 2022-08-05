@@ -49,8 +49,12 @@ class Controller extends BaseController
     public function news_events(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $page = "News/Events";
+        $events = Event::all();
+        $weekly_activities = WeeklyActivity::all();
         return view('news_events')->with([
-            'page' => $page
+            'page' => $page,
+            'events' => $events,
+            'weekly_activities' => $weekly_activities
         ]);
     }
 

@@ -6,47 +6,21 @@
         <div class="container">
             <h1 class="mb-4">Our Weekly Activities</h1>
             <div class="row g-4">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow">
-                        <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
-                        <div class="card-body">
-                            <div class="card-title my-3 h3">Sunday Service</div>
-                            <div class="card-text">
-                                <p class="mb-0"><strong>Day:</strong> Sunday</p>
-                                <p class="mb-0"><strong>Time:</strong> 8:00am to 11:30pm</p>
-                                <p class="mb-0"><strong>Location:</strong> Assembly Hall</p>
+                @foreach($weekly_activities as $activity)
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card shadow text-center">
+                            <img src="{{ $activity->image == null ? asset('sysImages/nubs_logo.png') : asset('images/weekly_activity/' . $activity->image) }}" alt="sunday" class="card-img-top" />
+                            <div class="card-body">
+                                <div class="card-title my-3 h3">{{ $activity->service }}</div>
+                                <div class="card-text">
+                                    <p class="mb-0"><strong>Day:</strong> {{ $activity->day }}</p>
+                                    <p class="mb-0"><strong>Time:</strong> {{ $activity->time }}</p>
+                                    <p class="mb-0"><strong>Location:</strong> {{ $activity->activity_location($activity->location_id) }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow">
-                        <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
-                        <div class="card-body">
-                            <div class="card-title my-3 h3">Prayer Force</div>
-                            <div class="card-text">
-                                <p class="mb-0"><strong>Day:</strong> Monday</p>
-                                <p class="mb-0"><strong>Time:</strong> 7:00pm to 8:30pm</p>
-                                <p class="mb-0"><strong>Location:</strong> Casford Feild</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card shadow">
-                        <img src="{{ asset('sysImages/pic1.jpeg') }}" alt="sunday" class="card-img-top" />
-                        <div class="card-body">
-                            <div class="card-title my-3 h3">Midweek Service</div>
-                            <div class="card-text">
-                                <p class="mb-0"><strong>Day:</strong> Thursday</p>
-                                <p class="mb-0"><strong>Time:</strong> 6:30pm to 8:00pm</p>
-                                <p class="mb-0">
-                                    <strong>Location:</strong> New Life Baptist
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -73,6 +47,11 @@
 
         <div id="events" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
+{{--                @forelse($events as $event)--}}
+{{--                    --}}
+{{--                @empty--}}
+{{--                    --}}
+{{--                @endforelse--}}
                 <div class="carousel-item active">
                     <img src="{{ asset('sysImages/carousel2.jpg') }}" class="d-block w-100" alt="1" />
                 </div>
