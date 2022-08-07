@@ -15,7 +15,10 @@ class PasswordResetLinkController extends Controller
      */
     public function create()
     {
-        return view('admin.forgot-password');
+        $page = "Forgot Password";
+        return view('admin.forgot-password')->with([
+            'page' => $page,
+        ]);
     }
 
     /**
