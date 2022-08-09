@@ -1,64 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# NUBS UCC WEBSITE
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Summary
+This website was created to aid the assimilation of information concerning the **National Union of Baptist Students (NUBS) UCC** and NUBS Ghana in general to the alumni and the general public.
 
-## About Laravel
+It contains the following pages/tabs:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Home](#home-page)
+- [About](#about-page)
+- [News/Events](#newsevents-page)
+- [Testimonies](#testimonies)
+- [Gallery](#gallery)
+- [Departments](#departments)
+- [Executives](#executives)
+- [Contact](#contact)
+- [Donate](#donate)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br />
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Home Page
+This page contains the general overview of what NUBS UCC is all about. It has the welcome address, the vision and mission of the union, carousels of testimonies and events as well as the weekly activities for the semester.
 
-## Learning Laravel
+<br />
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## About Page
+The about page tells the viewer all about NUBS UCC and NUBS Ghana in general. It also includes the NUBS Anthem.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<br />
 
-## Laravel Sponsors
+## News/Events Page
+This page displays all activities intended to be held by the union during that academic year. It may include activities which go beyond or start after the academic year. The activities for the semester can also be found here.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<br />
 
-### Premium Partners
+## Testimonies
+This page displays in a grid layout, testimonies of individuals in and out of the union. Anyone can add a testimony, however to prevent this page from being abused, any testimony submitted will have to be inspected by an admin before it will be made public on the testimonies page.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<br />
 
-## Contributing
+## Gallery
+This page displays in a grid layout, the albums of the union. Each album links to an instagram post which contains picture to a particular event conducted by NUBS UCC.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<br />
 
-## Code of Conduct
+## Departments
+This page displays the various departments in the union. The departments are the _MUSIC WING, BIBLE STUDY WING, ORGANISING WING, EVANGELISM WING_ and the _DRAMA AND CHOREOGRAPHY WING_.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<br />
 
-## Security Vulnerabilities
+## Executives
+This page displays basic information of the current and the past executives (though this list starts from the 2019/2020 year group of executives).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<br />
 
-## License
+## Contact
+This page displays a form through which anyone using the platform can contact the union for any enquiry.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<br />
+
+## Donate
+This page displays and provides information on the current and up coming projects the union is embarking on. Anyone who would like to support the union in any way can see the steps on how to do so on this page.
