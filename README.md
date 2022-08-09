@@ -1,19 +1,22 @@
-# NUBS UCC WEBSITE
+# NUBS UCC WEBSITE <img src="./public/sysImages/nubs_logo.png" width="60">
 
 ## Summary
 This website was created to aid the assimilation of information concerning the **National Union of Baptist Students (NUBS) UCC** and NUBS Ghana in general to the alumni and the general public.
 
 It contains the following pages/tabs:
 
-- [Home](#home-page)
-- [About](#about-page)
-- [News/Events](#newsevents-page)
-- [Testimonies](#testimonies)
-- [Gallery](#gallery)
-- [Departments](#departments)
-- [Executives](#executives)
-- [Contact](#contact)
-- [Donate](#donate)
+- [NUBS UCC WEBSITE <img src="./public/sysImages/nubs_logo.png" width="60">](#nubs-ucc-website-)
+  - [Summary](#summary)
+  - [Home Page](#home-page)
+  - [About Page](#about-page)
+  - [News/Events Page](#newsevents-page)
+  - [Testimonies](#testimonies)
+  - [Gallery](#gallery)
+  - [Departments](#departments)
+  - [Executives](#executives)
+  - [Contact](#contact)
+  - [Donate](#donate)
+    - [For more inormation](#for-more-inormation)
 
 <br />
 
@@ -59,3 +62,11 @@ This page displays a form through which anyone using the platform can contact th
 
 ## Donate
 This page displays and provides information on the current and up coming projects the union is embarking on. Anyone who would like to support the union in any way can see the steps on how to do so on this page.
+
+<br />
+
+### For more inormation
+Follow us on our social media platforms: 
+
+[![Facebok](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/20px-Facebook_Logo_%282019%29.png)](https://www.facebook.com/nubsucc12/) &nbsp;
+[![Facebok](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/20px-Instagram_logo_2016.svg.png)](https://www.facebook.com/nubsucc12/) &nbsp;
