@@ -57,26 +57,20 @@
     <!-- Vision and Mission Section -->
     <section class="p-sm-5 py-5">
         <div class="container text-center">
-            <div class="d-md-flex align-items-center justify-content-between">
+            <div class="d-md-flex align-items-center justify-content-evenly">
                 <div class="px-sm-5 mb-md-0 mb-5">
                     <!-- Mission statement -->
                     <p class="display-4">Our Mission</p>
                     <p class="lead">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
-                        inventore ad quam saepe sit porro mollitia perspiciatis sapiente,
-                        quos fugiat molestias, quas cupiditate adipisci sed quibusdam.
-                        Dignissimos odit soluta possimus!
+                        The Ghana Baptist Convention exists to evangelize the lost, disciple believers of the Gospel of Jesus Christ, plant churches, train leaders and minister to the spiritual and socio–economic needs of people through strong and vibrant structures and institutions, and in cooperation with relevant bodies.
                     </p>
                 </div>
 
                 <div class="px-sm-5">
                     <!-- Vision statement -->
-                    <p class="display-4">Our Vission</p>
+                    <p class="display-4">Our Vision</p>
                     <p class="lead">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
-                        inventore ad quam saepe sit porro mollitia perspiciatis sapiente,
-                        quos fugiat molestias, quas cupiditate adipisci sed quibusdam.
-                        Dignissimos odit soluta possimus!
+                        To fulfill the Great Commission of Jesus Christ...
                     </p>
                 </div>
             </div>
