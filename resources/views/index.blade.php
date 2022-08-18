@@ -66,13 +66,13 @@
                     </p>
                 </div>
 
-                <div class="px-sm-5">
-                    <!-- Vision statement -->
-                    <p class="display-4">Our Vision</p>
-                    <p class="lead">
-                        To fulfill the Great Commission of Jesus Christ...
-                    </p>
-                </div>
+{{--                <div class="px-sm-5">--}}
+{{--                    <!-- Vision statement -->--}}
+{{--                    <p class="display-4">Our Vision</p>--}}
+{{--                    <p class="lead">--}}
+{{--                        To fulfill the Great Commission of Jesus Christ...--}}
+{{--                    </p>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
