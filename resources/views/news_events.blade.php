@@ -53,7 +53,7 @@
                         <p style="white-space: pre-wrap" class="pt-4 container">{{ $event->description }}</p>
                     </div>
                 @empty
-                    <p class="lead py-5 my-5">
+                    <p class="lead py-5 my-5 container">
                         No testimony in the system at the moment...
                     </p>
                 @endforelse
