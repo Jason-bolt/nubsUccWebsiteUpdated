@@ -100,7 +100,7 @@
 <!-- Footer -->
 <footer
     class="footer p-5 text-white text-center position-relative"
-    style="background-color: rgb(3, 23, 83)"
+    style="background-color: rgb(3, 23, 83); margin-top: 1vh"
 >
     <div class="container">
         <p class="lead">Copyright NUBS UCC &copy; 2022</p>
