@@ -105,11 +105,7 @@
                     </form>
                 </div>
                 <div class="col-md px-sm-3">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
-                    recusandae placeat officiis laborum odit, quisquam quidem
-                    repellendus! Quia, obcaecati. Quae distinctio nisi voluptatum at
-                    eveniet. Inventore ea, atque quibusdam molestiae earum vitae fuga
-                    at, deserunt aliquid, eius ducimus. A, enim?
+                    Do you have a need or are you struggling with a situation where you need the people of God to intercede to the Lord God on your behalf? If yes, please feel free to make your prayer request known to us so that our ever ready prayer team can stand in the gap for you and your situation.
                 </div>
             </div>
         </div>

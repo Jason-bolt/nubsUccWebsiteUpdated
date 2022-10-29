@@ -54,7 +54,7 @@
                     </div>
                 @empty
                     <p class="lead py-5 my-5 container">
-                        No testimony in the system at the moment...
+                        No events in the system at the moment...
                     </p>
                 @endforelse
             </div>
