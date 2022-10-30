@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ContactMailJob;
 use App\Mail\ContactMail;
 use App\Models\Event;
 use App\Models\Executive;
@@ -181,6 +182,10 @@ class Controller extends BaseController
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function sendEmail(Request $request)
     {
         $request->validate(
@@ -193,7 +198,15 @@ class Controller extends BaseController
             ]
         );
 
-        Mail::to('info@nubsucc.com')->send(new ContactMail($request));
+        $contactMail = (object) array(
+            'last_name' => $request['last_name'],
+            'other_names' => $request['other_names'],
+            'email_address' => $request['email_address'],
+            'message_type' => $request['message_type'],
+            'message' => $request['message']
+        );
+
+        $this->dispatch(new ContactMailJob($contactMail));
 
         return back()->with('status', 'Message sent successfully!');
     }

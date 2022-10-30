@@ -5,7 +5,6 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -14,16 +13,16 @@ class ContactMail extends Mailable
 
     use Queueable, SerializesModels;
 
-    private Request $request;
+    private object $contactMail;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(object $contactMail)
     {
-        $this->request = $request;
+        $this->contactMail = $contactMail;
     }
 
     /**
@@ -35,11 +34,11 @@ class ContactMail extends Mailable
     {
         return $this->markdown('emails.contact.sendMail')
             ->with([
-                'last_name' => $this->request['last_name'],
-                'other_names' => $this->request['other_names'],
-                'email_address' => $this->request['email_address'],
-                'message_type' => $this->request['message_type'],
-                'message' => $this->request['message']
+                'last_name' => $this->contactMail->last_name,
+                'other_names' => $this->contactMail->other_names,
+                'email_address' => $this->contactMail->email_address,
+                'message_type' => $this->contactMail->message_type,
+                'message' => $this->contactMail->message
             ]);
     }
 }

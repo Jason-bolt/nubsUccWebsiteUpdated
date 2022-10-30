@@ -7,7 +7,7 @@
             <h1 class="mb-4">Reach Out To Us</h1>
 
             @if (session('status'))
-                <div class="text-success">
+                <div class="text-success my-5 lead">
                     {{ session('status') }}
                 </div>
             @endif
