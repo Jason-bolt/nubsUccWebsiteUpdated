@@ -6,9 +6,9 @@
         <div class="container text-center">
             <h1 class="mb-4">Reach Out To Us</h1>
 
-            @if ($status)
-                <div>
-                    {{ $status }}
+            @if (session('status'))
+                <div class="text-success">
+                    {{ session('status') }}
                 </div>
             @endif
 

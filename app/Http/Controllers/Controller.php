@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Models\Event;
 use App\Models\Executive;
 use App\Models\Gallery;
@@ -13,6 +14,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Mail;
 
 class Controller extends BaseController
 {
@@ -185,12 +187,15 @@ class Controller extends BaseController
             [
                 'last_name' => ['string', 'required'],
                 'other_names' => ['string', 'required'],
-                'email' => ['email', 'required'],
+                'email_address' => ['email', 'required'],
                 'message_type' => ['required'],
                 'message' => ['string', 'required']
             ]
         );
-        dd($request);
+
+        Mail::to('info@nubsucc.com')->send(new ContactMail($request));
+
+        return back()->with('status', 'Message sent successfully!');
     }
 
     /**
