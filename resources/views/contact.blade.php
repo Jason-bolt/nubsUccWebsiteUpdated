@@ -6,6 +6,27 @@
         <div class="container text-center">
             <h1 class="mb-4">Reach Out To Us</h1>
 
+            @if ($status)
+                <div>
+                    {{ $status }}
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div>
+                    <div class="text-danger">
+                        {{ __('Whoops! Something went wrong.') }}
+                    </div>
+
+                    <ul class="mt-3 text-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+
             <form
                 action="{{ route('sendEmail') }}"
                 method="post"

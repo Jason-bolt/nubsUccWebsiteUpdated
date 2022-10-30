@@ -181,7 +181,16 @@ class Controller extends BaseController
 
     public function sendEmail(Request $request)
     {
-
+        $request->validate(
+            [
+                'last_name' => ['string', 'required'],
+                'other_names' => ['string', 'required'],
+                'email' => ['email', 'required'],
+                'message_type' => ['required'],
+                'message' => ['string', 'required']
+            ]
+        );
+        dd($request);
     }
 
     /**
