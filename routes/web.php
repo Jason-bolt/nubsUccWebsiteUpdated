@@ -29,10 +29,10 @@ Route::get('/executives', [Controller::class, 'executives'])->name('executives')
 Route::post('/executives', [Controller::class, 'executives_for_batch'])->name('executives_for_batch');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
 Route::get('/donate', [Controller::class, 'donate'])->name('donate');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

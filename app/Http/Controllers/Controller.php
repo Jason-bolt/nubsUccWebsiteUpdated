@@ -179,6 +179,11 @@ class Controller extends BaseController
         ]);
     }
 
+    public function sendEmail(Request $request)
+    {
+
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
      */
