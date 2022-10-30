@@ -28,6 +28,7 @@ Route::get('/departments', [Controller::class, 'departments'])->name('department
 Route::get('/executives', [Controller::class, 'executives'])->name('executives');
 Route::post('/executives', [Controller::class, 'executives_for_batch'])->name('executives_for_batch');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
+Route::post('/contact', [Controller::class, 'sendEmail'])->name('sendEmail');
 Route::get('/donate', [Controller::class, 'donate'])->name('donate');
 //
 //Route::get('/dashboard', function () {

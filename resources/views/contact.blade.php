@@ -7,11 +7,12 @@
             <h1 class="mb-4">Reach Out To Us</h1>
 
             <form
-                action="#"
+                action="{{ route('sendEmail') }}"
                 method="post"
                 class="p-sm-5 shadow p-3"
                 onsubmit="return validateForm()"
             >
+                @csrf
                 <div class="row g-4">
                     <!-- Last name -->
                     <div class="col-md-6">
@@ -86,12 +87,13 @@
                     </div>
                 </div>
 
-                <input
-                    type="submit"
-                    class="btn btn-nubsBlue px-4 py-2 mt-3"
-                    value="Send message"
-                    name="message_submit"
-                />
+                <button type="submit" class="btn btn-nubsBlue px-4 py-2 mt-3">Send message <i class="bi bi-envelope-fill"></i></button>
+{{--                <input--}}
+{{--                    type="submit"--}}
+{{--                    class="btn btn-nubsBlue px-4 py-2 mt-3"--}}
+{{--                    value="Send message"--}}
+{{--                    name="message_submit"--}}
+{{--                />--}}
             </form>
         </div>
     </section>
