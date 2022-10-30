@@ -24,6 +24,7 @@
         crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{{ asset('css/css.css') }}" />
+    <script src="https://kit.fontawesome.com/933baac7d1.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="header">
