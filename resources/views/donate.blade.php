@@ -11,6 +11,26 @@
         </div>
     </section>
 
+    {{-- Donate Modal --}}
+    <div class="modal fade" id="donation" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Donation accounts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="fw-bold">MoMo Number:</h6>
+                    <p>XXXXXXXXXX</p>
+                    <h6 class="fw-bold">Bank Details:</h6>
+                    <p class="m-0"><strong>Number: </strong>XXXXXXXXXX</p>
+                    <p class="m-0"><strong>Name: </strong>NUBS UCC</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <section class="my-5">
         <div class="container">
             <div class="row">
@@ -28,7 +48,7 @@
                                 </p>
                             </div>
                         </div>
-                        <button class="btn btn-nubsBlue m-3 fw-bold">Donate <i class="fas fa-hand-holding-usd ps-1"></i></button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#donation" class="btn btn-nubsBlue m-3 fw-bold">Donate <i class="fas fa-hand-holding-usd ps-1"></i></button>
                     </div>
                 </div>
 
