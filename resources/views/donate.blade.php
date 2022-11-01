@@ -39,7 +39,7 @@
                     <div class="card shadow" style="height: 435px">
                         <div class="card-body">
                             <div class="text-center">
-                                <img src="{{ asset('images/donate/bus.png') }}" alt="Bus image" class="img-fluid p-2">
+                                <img src="{{ asset('sysImages/donate/bus.png') }}" alt="Bus image" class="img-fluid p-2">
                             </div>
                             <div class="card-text mt-3">
                                 <h4 style="color: rgb(3, 23, 83)" class="pb-2">Bus project</h4>
@@ -57,7 +57,7 @@
                     <div class="card shadow" style="height: 435px">
                         <div class="card-body">
                             <div class="text-center">
-                                <img src="{{ asset('images/donate/instruments.png') }}" alt="Instrument image" class="img-fluid p-2" width="205px">
+                                <img src="{{ asset('sysImages/donate/instruments.png') }}" alt="Instrument image" class="img-fluid p-2" width="205px">
                             </div>
                             <div class="card-text mt-3">
                                 <h4 style="color: rgb(3, 23, 83)" class="pb-2">Instrument project</h4>
