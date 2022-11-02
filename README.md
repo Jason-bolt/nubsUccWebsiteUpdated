@@ -38,6 +38,10 @@ This page displays all activities intended to be held by the union during that a
 ## Testimonies
 This page displays in a grid layout, testimonies of individuals in and out of the union. Anyone can add a testimony, however to prevent this page from being abused, any testimony submitted will have to be inspected by an admin before it will be made public on the testimonies page.
 
+Users can add testimonies through the <b>Contact</b> page by selecting "tetimony" from the "reason" section of the form. After a user submits the form, the data is sent to the admin section. Here the admin has the ability to correct spelling mistakes, however, the meaning will still be the same. The sender will also be contacted to know if he or she would like to have their picture portrayed.
+
+Upon approval, the testimony reflects on the <b>Testimonies</b> page. I a user types in a name into the names fields, the name will be added to the testimony. However, if a person does not want the name to appear for any reason can leave the names section blank. The name section will have "Anonymous" if no name is found.
+
 <br />
 
 ## Gallery
