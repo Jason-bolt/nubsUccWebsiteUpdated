@@ -206,6 +206,18 @@ class Controller extends BaseController
             'message' => $request['message']
         );
 
+        $name = $request->last_name . ' ' . $request->other_names;
+
+//        dd($request->message_type);
+        if ($request->message_type == 'testimony')
+        {
+            Testimony::create([
+                'name' => $name,
+                'testimony' => $request->message,
+                'is_accepted' => false,
+            ]);
+        }
+
         $this->dispatch(new ContactMailJob($contactMail));
 
         return back()->with('status', 'Message sent successfully!');
