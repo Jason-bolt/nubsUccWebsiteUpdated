@@ -44,20 +44,27 @@
                                     <p style="white-space: pre-wrap">{{ $testimony->testimony }}</p>
                                 </div>
                                 <div class="mt-4">
-                                    <button
-                                        class="btn btn-nubsBlue rounded-pill px-3 py-1"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#editTestimony{{ $testimony->id }}"
-                                    >
-                                        <i class="bi bi-pencil"></i> Edit
-                                    </button>
-                                    <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onsubmit="return confirm('This testimony will be deleted!')">
-                                        @method('delete')
-                                        @csrf
-                                        <button class="btn btn-danger rounded-pill py-1">
-                                            <i class="bi bi-trash"></i> Delete
-                                        </button>
-                                    </form>
+                                    <div class="row g-2">
+                                        <div class="col-lg-6">
+                                            <button
+                                                class="btn btn-nubsBlue rounded-pill px-3 py-1"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#editTestimony{{ $testimony->id }}"
+                                            >
+                                                <i class="bi bi-pencil"></i> Edit
+                                            </button>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onsubmit="return confirm('This testimony will be deleted!')">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-danger rounded-pill py-1">
+                                                    <i class="bi bi-trash"></i> Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
