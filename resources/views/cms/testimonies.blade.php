@@ -197,7 +197,9 @@
                                         ></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="" enctype="multipart/form-data">
+                                        <form action="testimonies/{{ $testimony->id }}" enctype="multipart/form-data" method="POST">
+                                            @csrf
+                                            @method('put')
                                             <div class="form-group mb-3">
                                                 <label class="lead" for="image">Image</label>
                                                 <input type="file" class="form-control" />
@@ -211,8 +213,8 @@
                                                 >Testimony message</label
                                                 >
                                                 <textarea
-                                                    name="testimonyMessage"
-                                                    id="testimonyMessage"
+                                                    name="testimony"
+                                                    id="testimony"
                                                     rows="7"
                                                     class="form-control"
                                                 >{{ $testimony->testimony }}</textarea>

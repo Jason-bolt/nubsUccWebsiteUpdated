@@ -111,6 +111,7 @@ class TestimonyController extends Controller
      */
     public function update(Request $request, Testimony $testimony)
     {
+//        dd($request);
         $request->validate([
             'image' => ['nullable', 'image', 'max:5120'],
             'name' => ['nullable', 'string'],
