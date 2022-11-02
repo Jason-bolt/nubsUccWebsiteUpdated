@@ -200,7 +200,7 @@
                                     <div class="text-center shadow">
                                         <img
                                             {{--                                            src="https://randomuser.me/api/portraits/men/11.jpg"--}}
-                                            src="{{ asset('images/testimony/' . $testimony->image) }}"
+                                            src="{{ $testimony->image == null ? asset('sysImages/person.png') : asset('images/testimony/' . $testimony->image) }}"
                                             alt="executive"
                                             class="rounded-circle img-fluid"
                                         />
