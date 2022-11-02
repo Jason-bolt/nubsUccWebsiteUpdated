@@ -26,7 +26,7 @@ This page contains the general overview of what NUBS UCC is all about. It has th
 <br />
 
 ## About Page
-The about page tells the viewer all about NUBS UCC and NUBS Ghana in general. It also includes the NUBS Anthem.
+The about page tells the viewer all about NUBS UCC and NUBS Ghana in general. It also includes the NUBS Anthem. The list of the current executives can also be found here with their contact details.
 
 <br />
 
