@@ -38,7 +38,7 @@
                                     <img
                                         src="{{ $testimony->image == null ? asset('sysImages/person.png') : asset('images/testimony/' . $testimony->image) }}"
                                         alt="executive"
-                                        class="rounded-circle"
+                                        class="rounded-circle img-fluid"
                                     />
                                     <h5 class="my-2">{{ $testimony->name }}</h5>
                                     <p style="white-space: pre-wrap">{{ $testimony->testimony }}</p>
