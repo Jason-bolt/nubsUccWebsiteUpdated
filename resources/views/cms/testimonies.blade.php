@@ -141,31 +141,40 @@
                                     <img
                                         src="{{ $testimony->image == null ? asset('sysImages/person.png') : asset('images/testimony/' . $testimony->image) }}"
                                         alt="executive"
-                                        class="rounded-circle"
+                                        class="rounded-circle img-fluid"
                                     />
                                     <h5 class="my-2">{{ $testimony->name }}</h5>
                                     <p>{{ $testimony->testimony }}</p>
                                 </div>
                                 <div class="mt-4">
-                                    <button
-                                        class="btn btn-nubsBlue rounded-pill px-3 py-1"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#editTestimony{{ $testimony->id }}"
-                                    >
-                                        <i class="bi bi-pencil"></i> Edit
-                                    </button>
-                                    <!-- Approve button -->
-                                    <a href="#" class="btn btn-success rounded-pill"
-                                    ><i class="bi bi-check-lg"></i> Approve</a
-                                    >
+                                    <div class="row g-2">
+                                        <div class="col-lg-4">
+                                            <button
+                                                class="btn btn-nubsBlue rounded-pill px-3 py-1"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#editTestimony{{ $testimony->id }}"
+                                            >
+                                                <i class="bi bi-pencil"></i> Edit
+                                            </button>
+                                        </div>
 
-                                    <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
-                                        @method('delete')
-                                        @csrf
-                                        <button class="btn btn-danger rounded-pill py-1">
-                                            <i class="bi bi-trash"></i> Delete
-                                        </button>
-                                    </form>
+                                        <!-- Approve button -->
+                                        <div class="col-lg-4">
+                                            <a href="#" class="btn btn-success rounded-pill"
+                                            ><i class="bi bi-check-lg"></i> Approve</a
+                                            >
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <form action="testimonies/{{ $testimony->id }}" method="POST" class="d-inline" onclick="return confirm('This testimony will be deleted!')">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-danger rounded-pill py-1">
+                                                    <i class="bi bi-trash"></i> Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
