@@ -147,6 +147,17 @@ class TestimonyController extends Controller
         return back()->with('status', 'Testimony updated successfully!');
     }
 
+    public function approveTestimony($id)
+    {
+//        dd($id);
+        Testimony::where('id', $id)
+            ->update([
+               'is_accepted' => true,
+            ]);
+
+        return back()->with('status', 'Testimony accepted!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/testimonies', [TestimonyController::class, 'store'])->name('add_testimony');
         Route::put('/testimonies/{testimony}', [TestimonyController::class, 'update']);
         Route::delete('/testimonies/{testimony}', [TestimonyController::class, 'destroy']);
+        Route::get('/testimonies/approve/{id}', [TestimonyController::class, 'approveTestimony']);
 
         Route::get('/gallery', [GalleryController::class, 'show_albums'])->name('show_albums');
         Route::post('/gallery', [GalleryController::class, 'store'])->name('add_album');

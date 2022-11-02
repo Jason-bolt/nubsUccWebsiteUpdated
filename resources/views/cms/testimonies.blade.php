@@ -160,7 +160,7 @@
 
                                         <!-- Approve button -->
                                         <div class="col-lg-4">
-                                            <a href="#" class="btn btn-success rounded-pill"
+                                            <a href="testimonies/approve/{{ $testimony->id }}" class="btn btn-success rounded-pill"
                                             ><i class="bi bi-check-lg"></i> Approve</a
                                             >
                                         </div>
